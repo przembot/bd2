@@ -16,7 +16,8 @@ Ubuntu/Debian:
 Windows:  
 1. Install:  
 	- Python 3.5.2 https://www.python.org/ftp/python/3.5.2/python-3.5.2-amd64.exe  
-	- PostgreSQL 9.5.5 http://www.enterprisedb.com/products-services-training/pgdownload#windows  
+	- PostgreSQL 9.5.5 http://www.enterprisedb.com/products-services-training/pgdownload#windows
+	!! If you are using MS Windows, please read Windows section below before finishing PostgreSQL installation !! 
 2. follow steps 2-7 from above  
 
 
@@ -36,4 +37,10 @@ Ubuntu/Debian:
     if you get: "psql: FATAL: Peer authentication failed for user "storeuser"" modify file /etc/postgresql/9.5/main/pg_hba.conf by changing line "local all all peer" to "local all all md5". Restart server #/etc/init.d/postgresql restart (or sudo service postgresql restart)  
 
 Windows:  
-	TODO add manual here
+    !! In tutorial below we assume, that your PostgreSQL username teremined during installation is 'postgres'  !!  
+    !! -U parameter specifies PostgreSQL username !! 
+    !! Postgresql\version\bin\ directory MUST be added to $PATH !!  
+    > createuser -U postgres --no-superuser --createdb --no-createrole storeuser  
+    > createdb -U postgres -O storeuser store  
+    > psql -U postgres -c "alter user storeuser with encrypted password 'password';"  
+    
