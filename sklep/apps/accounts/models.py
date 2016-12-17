@@ -1,3 +1,27 @@
 from django.db import models
+from django.contrib.auth.models import AbstractUser
 
-# Create your models here.
+class CustomUser(AbstractUser):
+    type_choices = (
+        ('C', 'Client'),
+        ('E', 'Employee'),
+    )
+    user_type = models.CharField(max_length=1,
+                                 choices=type_choices,
+                                 default='C')
+    birthdate = models.DateField()
+    adress = models.CharField(max_length=100)
+
+
+
+class Client(models.Model):
+    user = models.OneToOneField(CustomUser,
+    							on_delete=models.CASCADE,
+                                primary_key=True)
+
+class Employee(models.Model):
+    user = models.OneToOneField(CustomUser,
+    							on_delete=models.CASCADE,
+                                primary_key=True)
+    pesel = models.CharField(max_length=11,
+    						unique=True)
