@@ -20,14 +20,23 @@ def db_search_items(cat_id=None, name=None):
 	@return: lista Item
 	"""
 	items = Item.objects.all()
-	if cat_id is not None:
+
+	# return all items
+	if cat_id is None and name is None:
+		filtered_items = items
+
+	# search inside category
+	elif cat_id is not None:
 		if name is None:
 			filtered_items = items.filter(category_id=cat_id)
 		else:
 			filtered_items = items.filter(category_id=cat_id, name__itcontains=name)
-		return filtered_items
 
-	return items
+	# search items by name without specifying category
+	else:
+		filtered_items = items.filter(name__itcontains=name)
+
+	return filtered_items
 
 def search_items(request, cat_id=None, name=None):
 	print(request.GET["cat_id"])
@@ -45,7 +54,7 @@ def make_order(request):
 			try:
 				item = Item.objects.get(id=item_id)
 				price_dict[item_id] = item.price
-				if item.in_stock < amount:
+				if amount < '1' or item.in_stock < amount:
 					return HttpResponseBadRequest()
 			except Item.DoesNotExist:
 				return HttpResponseBadRequest()
@@ -64,5 +73,9 @@ def make_order(request):
 											order_id=new_order.id,
 											item_id=itemspec['id'])
 					order_item.save()
+
+				if order['invoice'] is True:
+					# create invoice here
+					pass
 
 	return HttpResponse()
