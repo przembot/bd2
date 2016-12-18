@@ -35,3 +35,7 @@ footer {
 .bold {
     font-weight: bold;
 }
+
+#srch-term {
+    width: 400px;
+}
