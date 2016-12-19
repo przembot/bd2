@@ -39,3 +39,11 @@ footer {
 #srch-term {
     width: 400px;
 }
+
+.details {
+    background-color: #337ab7;
+}
+
+a.details-button{
+    color: #fff;
+}
