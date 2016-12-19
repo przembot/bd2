@@ -43,4 +43,12 @@ Windows:
     > createuser -U postgres --no-superuser --createdb --no-createrole storeuser  
     > createdb -U postgres -O storeuser store  
     > psql -U postgres -c "alter user storeuser with encrypted password 'password';"  
-    
+   
+**Prepare database and run server:**  
+Prepare db: (should be done once and before first server start)  
+$ python sklep/manage.py migrate  
+  
+Run server:  
+$ python sklep/manage.py runserver localhost:8000  
+  
+Site is now visible at localhost:8000 (or 127.0.0.1:8000)  
