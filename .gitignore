@@ -3,3 +3,5 @@ sklep/db.sqlite3
 __pychache__/
 *.py[cod]
 *$py.class
+.idea/
+*.iml
