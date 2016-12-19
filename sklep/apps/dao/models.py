@@ -9,8 +9,14 @@ class Item(models.Model):
 	in_stock = models.PositiveIntegerField()
 	category_id = models.ForeignKey('Category')
 
+	def __str__(self):
+		return self.name
+
 class Category(models.Model):
 	name = models.CharField(max_length=30)
+
+	def __str__(self):
+		return self.name
 
 class Order(models.Model):
 	date = models.DateTimeField(auto_now_add=True)

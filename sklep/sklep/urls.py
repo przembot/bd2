@@ -15,8 +15,11 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
+from apps.accounts.views import user_login, CustomRegistrationView
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^', include('apps.client.urls')),
+    url(r'^login/', user_login, name="login"),
+    url(r'^register/$', CustomRegistrationView.as_view(), name="register"),
 ]

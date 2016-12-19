@@ -5,6 +5,8 @@ import json
 from datetime import datetime
 from django.db import transaction
 from django.http import HttpResponse
+from django.contrib.auth.decorators import login_required
+
 
 def index(request):
 	return render(request, 'index.html')
@@ -43,6 +45,7 @@ def search_items(request, cat_id=None, name=None):
 	print(request.GET["name"])
 	return render(request, 'index.html')
 
+@login_required
 def make_order(request):
 	if request.method == 'POST':
 		#json_data = json.loads(request.body) #for python2?
