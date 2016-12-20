@@ -9,7 +9,7 @@ from django.contrib.auth.decorators import login_required
 
 
 def index(request):
-    return render(request, 'items.html')
+    return render(request, 'index.html')
 
 def get_categories(request):
     cats = Category.objects.all()

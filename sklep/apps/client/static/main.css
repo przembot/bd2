@@ -1,3 +1,9 @@
+/* Used for navbar-fixed top to avoid overlapping site */
+body { padding-top: 40px; }
+@media screen and (max-width: 768px) {
+    body { padding-top: 0px; }
+}
+
 /* Remove the navbar's default margin-bottom and rounded borders */
 .navbar {
     margin-bottom: 0;
@@ -46,4 +52,30 @@ footer {
 
 a.details-button{
     color: #fff;
+}
+
+.review-block{
+    background-color:#FAFAFA;
+    border:1px solid #EFEFEF;
+    padding:15px;
+    border-radius:3px;
+    margin-bottom:15px;
+}
+
+.review-block-name{
+    font-size:13px;
+    margin:10px 0;
+}
+
+.review-block-date{
+    font-size:12px;
+}
+
+.review-block-rate{
+    font-size:13px;
+    margin-bottom:15px;
+}
+
+.review-block-description{
+    font-size:13px;
 }
