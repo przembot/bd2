@@ -18,10 +18,16 @@ def get_orders(request):
     try:
         user = Client.objects.get(user=request.user)
         orderList = Order.objects.filter(client_id=user.id)
-        return orderList
+        orderDict = {}
+        for order in orderList:
+           orderList = Order_Item.objects.select_related().filter(order_id=order.id)
+           orderDict[order] = orderList
+
+        return render(request, template_name='my-orders.html',
+                      context={'orderDict' : orderdict})
 
     except Client.DoesNotExist:
-        pass
+        return render(request.path)
 
 def product_reviews(prod_id=None):
     """
