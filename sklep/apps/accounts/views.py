@@ -9,7 +9,6 @@ from registration.backends.simple.views import RegistrationView
 from apps.accounts.forms import CustomRegistrationForm
 from apps.accounts.models import Client
 
-
 @sensitive_post_parameters()
 @csrf_protect
 @never_cache
@@ -23,7 +22,7 @@ def user_login(request):
         if user:
             auth_views.login(request, user)
             if user.user_type == 'C':
-            	# TODO: change redirect
+                # TODO: change redirect
                 return redirect('/')
             elif user.user_type == 'E':
                 return redirect('')
@@ -35,7 +34,6 @@ def user_login(request):
             return redirect('login')
     else:
         return render(request, '404.html')
-
 
 class CustomRegistrationView(RegistrationView):
     template_name = 'registration_form.html'
@@ -50,7 +48,7 @@ class CustomRegistrationView(RegistrationView):
 
     def get_success_url(self, new_user):
         if new_user.user_type == 'C':
-        	# TODO: change redirect
+                # TODO: change redirect
             return '/'
         elif new_user.user_type == 'E':
             pass

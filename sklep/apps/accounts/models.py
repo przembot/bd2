@@ -1,7 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 
-
 class CustomUser(AbstractUser):
     type_choices = (
         ('C', 'Client'),
@@ -17,12 +16,10 @@ class CustomUser(AbstractUser):
     REQUIRED_FIELDS = ['first_name', 'last_name', 'email',
                        'birthdate', 'adress', 'user_type']
 
-
 class Client(models.Model):
     user = models.OneToOneField(CustomUser,
                                 on_delete=models.CASCADE,
                                 primary_key=True)
-
 
 class Employee(models.Model):
     user = models.OneToOneField(CustomUser,

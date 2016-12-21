@@ -7,7 +7,6 @@ from django.db import transaction
 from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
 
-
 def index(request):
     return render(request, 'index.html')
 
@@ -26,7 +25,7 @@ def get_orders(request):
 
 def product_reviews(prod_id=None):
     """
-    This kind of copy-pasted from product-detail
+    FIXME: This kind of copy-pasted from product-detail
     If this function is only used in product-detail
     I propose to remove it and just use line 36
     Mati
@@ -44,7 +43,7 @@ def product_detail(request, prod_id=None):
         try:
             product = Item.objects.get(id=prod_id)
             reviewList = product_reviews(prod_id)
-            return render(request, template_name='product-details.html', \
+            return render(request, template_name='product-details.html',
                           context={'product' : product, 'reviews' : reviewList})
 
         except Item.DoesNotExist:
@@ -96,7 +95,6 @@ def make_order(request):
                     return HttpResponseBadRequest()
             except Item.DoesNotExist:
                 return HttpResponseBadRequest()
-
 
             with transaction.atomic():
                 new_order = Order(status_change_date=datetime.now,
