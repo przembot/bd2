@@ -15,11 +15,37 @@ def get_categories(request):
     cats = Category.objects.all()
     return cats
 
+def get_orders(request):
+    try:
+        user = Client.objects.get(user=request.user)
+        orderList = Order.objects.filter(client_id=user.id)
+        return orderList
+
+    except Client.DoesNotExist:
+        pass
+
+def product_reviews(prod_id=None):
+    """
+    This kind of copy-pasted from product-detail
+    If this function is only used in product-detail
+    I propose to remove it and just use line 36
+    Mati
+    """
+    if prod_id is not None:
+        try:
+            reviewList = Review.objects.filter(id=prod_id)
+            return reviewList
+
+        except Review.DoesNotExist:
+            pass
+
 def product_detail(request, prod_id=None):
     if prod_id is not None:
         try:
             product = Item.objects.get(id=prod_id)
-            return render(request, template_name='product-details.html', context={'product' : product})
+            reviewList = product_reviews(prod_id)
+            return render(request, template_name='product-details.html', \
+                          context={'product' : product, 'reviews' : reviewList})
 
         except Item.DoesNotExist:
             return render(request.path)
