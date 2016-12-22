@@ -1,7 +1,12 @@
 /* Used for navbar-fixed top to avoid overlapping site */
-body { padding-top: 40px; }
+body {
+    padding-top: 40px;
+}
+
 @media screen and (max-width: 768px) {
-    body { padding-top: 0px; }
+    body {
+        padding-top: 0px;
+    }
 }
 
 /* Remove the navbar's default margin-bottom and rounded borders */
@@ -11,7 +16,9 @@ body { padding-top: 40px; }
 }
 
 /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
-.row.content {height: 1200px}
+.row.content {
+    height: 1200px
+}
 
 /* Set gray background color and 100% height */
 .sidenav {
@@ -35,7 +42,10 @@ footer {
         height: auto;
         padding: 15px;
     }
-    .row.content {height:auto;}
+
+    .row.content {
+        height: auto;
+    }
 }
 
 .bold {
@@ -50,32 +60,45 @@ footer {
     background-color: #337ab7;
 }
 
-a.details-button{
+a .details-button {
     color: #fff;
 }
 
-.review-block{
-    background-color:#FAFAFA;
-    border:1px solid #EFEFEF;
-    padding:15px;
-    border-radius:3px;
-    margin-bottom:15px;
+.review-block {
+    background-color: #FAFAFA;
+    border: 1px solid #EFEFEF;
+    padding: 15px;
+    border-radius: 3px;
+    margin-bottom: 15px;
 }
 
-.review-block-name{
-    font-size:13px;
-    margin:10px 0;
+.review-block-name {
+    font-size: 13px;
+    margin: 10px 0;
 }
 
-.review-block-date{
-    font-size:12px;
+.review-block-date {
+    font-size: 12px;
 }
 
-.review-block-rate{
-    font-size:13px;
-    margin-bottom:15px;
+.review-block-rate {
+    font-size: 13px;
+    margin-bottom: 15px;
 }
 
-.review-block-description{
-    font-size:13px;
+.review-block-description {
+    font-size: 13px;
+}
+
+.table tbody > tr > td.vert-align {
+    vertical-align: middle;
+}
+
+.oolor-primary {
+    background-color: #337ab7;
+    color: #fff;
+}
+
+.order {
+    border-top: 2px solid grey;
 }
