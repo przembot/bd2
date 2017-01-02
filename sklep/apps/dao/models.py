@@ -7,7 +7,9 @@ class Item(models.Model):
                                 decimal_places=2)
     description = models.TextField()
     in_stock = models.PositiveIntegerField()
-    category_id = models.ForeignKey('Category')
+    category_id = models.ForeignKey('Category',
+                                    on_delete = models.SET_DEFAULT,
+                                    default=1)
 
     def __str__(self):
         return self.name
