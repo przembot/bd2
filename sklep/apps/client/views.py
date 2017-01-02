@@ -90,34 +90,37 @@ def make_order(request):
     if request.method == 'POST':
         #json_data = json.loads(request.body) #for python2?
         order = json.loads(request.body.decode("utf-8"))
-        price_dict = {}
-        for itemspec in order['items']:
-            item_id = itemspec['id']
-            amount = itemspec['amount']
-            try:
-                item = Item.objects.get(id=item_id)
-                price_dict[item_id] = item.price
-                if amount < '1' or item.in_stock < amount:
-                    return HttpResponseBadRequest()
-            except Item.DoesNotExist:
-                return HttpResponseBadRequest()
+
+        try:
+            client = Client.objects.get(user=request.user)
 
             with transaction.atomic():
-                new_order = Order(status_change_date=datetime.now,
-                                payment_status=0,
-                                client_id=Client.objects.get(user=request.user))
-                new_order.save()
+                new_order = Order.create(status_change_date=datetime.now,
+                                         payment_status=0,
+                                         client_id=client)
                 for itemspec in order['items']:
-                # CHECK THIS: additional list of order_items may be required
-                # if objects is created locally and destroyed in the same iteration
-                    order_item = Order_Item(quantity=itemspec['amount'],
-                                            price=price_dict[itemspec['id']],
-                                            order_id=new_order.id,
-                                            item_id=itemspec['id'])
-                    order_item.save()
+                    item_id = itemspec['id']
+                    amount = itemspec['amount']
+
+                    # select_for_update locks db row until the end of transaction
+                    item = Item.objects.select_for_update().get(id=item_id)
+                    if amount >= 1 and item.in_stock >= amount:
+                        item.in_stock -= amount
+                        item.save()
+                        Order_Item.create(quantity=amount,
+                                          price=item.price,
+                                          order_id=new_order.id,
+                                          item_id=item_id)
+                    else:
+                        raise Exception('Wrong ammount supplied for ' +
+                            'item with id: ' + item_id)
 
                 if order['invoice'] is True:
                     # create invoice here
                     pass
+        except Exception:
+            # if exception is database exception,
+            # Django will do full rollback automatically here
+            return HttpResponseBadRequest()
 
     return HttpResponse()
