@@ -4,7 +4,7 @@ from apps.accounts.models import Client
 import json
 from datetime import datetime
 from django.db import transaction
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseBadRequest
 from django.contrib.auth.decorators import login_required
 
 def index(request):
