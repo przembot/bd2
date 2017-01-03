@@ -1,0 +1,1267 @@
+[
+{
+    "model": "dao.item",
+    "pk": 11,
+    "fields": {
+        "name": "Philips HR1676/90",
+        "price": "235.10",
+        "description": "Wydajny blender r\u0119czny firmy Philips jest wyposa\u017cony w silnik o mocy 800 W, technologi\u0119 ProMix i przycisk funkcji SpeedTouch umo\u017cliwiaj\u0105cy intuicyjn\u0105 obs\u0142ug\u0119 \u2014 mocniejsze naci\u015bni\u0119cie wyzwala wi\u0119ksz\u0105 moc. Blender pozwala przygotowywa\u0107 \u015bwie\u017ce posi\u0142ki tak, jak lubisz.",
+        "in_stock": 8,
+        "category_id": 11
+    }
+},
+{
+    "model": "dao.item",
+    "pk": 12,
+    "fields": {
+        "name": "Bosch MSM87130",
+        "price": "227.70",
+        "description": "Dla p\u00f3\u0142profesjonalnych kucharzy, kt\u00f3rzy oczekuj\u0105 doskona\u0142ych rezultat\u00f3w. Mocny i solidny blender w po\u0142\u0105czeniu z ko\u0144c\u00f3wk\u0105 do ubijania zapewnia wi\u0119cej mo\u017cliwo\u015bci.",
+        "in_stock": 12,
+        "category_id": 11
+    }
+},
+{
+    "model": "dao.item",
+    "pk": 13,
+    "fields": {
+        "name": "Zelmer 29Z020 / ZMW3001W",
+        "price": "248.90",
+        "description": "Klasyczna kuchenka mikrofalowa przeznaczona dla os\u00f3b preferuj\u0105cych prostot\u0119 obs\u0142ugi oraz kompaktowe rozmiary sprz\u0119tu AGD.",
+        "in_stock": 7,
+        "category_id": 11
+    }
+},
+{
+    "model": "dao.item",
+    "pk": 14,
+    "fields": {
+        "name": "Bosch SMI50D35EU",
+        "price": "1287.00",
+        "description": "Zmywarka, jakby ktos pytal",
+        "in_stock": 10,
+        "category_id": 11
+    }
+},
+{
+    "model": "dao.item",
+    "pk": 15,
+    "fields": {
+        "name": "BEKO TSE1262",
+        "price": "638.80",
+        "description": "Ch\u0142odziarko-zamra\u017carka, jednodrzwiowa, wolnostoj\u0105ca, podblatowa, firmy Beko, w kolorze bia\u0142ym.",
+        "in_stock": 3,
+        "category_id": 11
+    }
+},
+{
+    "model": "dao.item",
+    "pk": 16,
+    "fields": {
+        "name": "Razer Naga Chroma",
+        "price": "369.00",
+        "description": "Droga, brzydka i niewygodna, ale i tak kupisz, bo to Razer.",
+        "in_stock": 7,
+        "category_id": 12
+    }
+},
+{
+    "model": "dao.item",
+    "pk": 17,
+    "fields": {
+        "name": "Logitech G105",
+        "price": "269.00",
+        "description": "Klawa jak klawa.",
+        "in_stock": 13,
+        "category_id": 12
+    }
+},
+{
+    "model": "dao.item",
+    "pk": 18,
+    "fields": {
+        "name": "LogiLink USB LED czarna",
+        "price": "34.90",
+        "description": "LogiLink lampka USB 7 diod LED / elastyczne rami\u0119 / zasilana z portu USB",
+        "in_stock": 500,
+        "category_id": 12
+    }
+},
+{
+    "model": "dao.item",
+    "pk": 19,
+    "fields": {
+        "name": "SanDisk 64GB Extreme USB 3.0 Flash Drive",
+        "price": "165.00",
+        "description": "Pen jak pen",
+        "in_stock": 34,
+        "category_id": 12
+    }
+},
+{
+    "model": "dao.item",
+    "pk": 20,
+    "fields": {
+        "name": "Logitech C310 HD",
+        "price": "199.00",
+        "description": "Kamerka do wdzi\u0119czenia si\u0119 przed \u015bwiatem nie tylko wtedy, kiedy tego chcesz.",
+        "in_stock": 15,
+        "category_id": 12
+    }
+},
+{
+    "model": "dao.item",
+    "pk": 21,
+    "fields": {
+        "name": "Samsung UE50KU6000",
+        "price": "2699.00",
+        "description": "Telewizor. Du\u017co cali.",
+        "in_stock": 54,
+        "category_id": 13
+    }
+},
+{
+    "model": "dao.item",
+    "pk": 22,
+    "fields": {
+        "name": "Panasonic TX-58DX700E",
+        "price": "4490.00",
+        "description": "Telewizor. Ma\u0142o cali. O wiele dro\u017cszy.",
+        "in_stock": 32,
+        "category_id": 13
+    }
+},
+{
+    "model": "dao.item",
+    "pk": 23,
+    "fields": {
+        "name": "SanDisk Sansa Clip Jam 8GB czarna",
+        "price": "179.00",
+        "description": "Super lekki, przeno\u015bny odtwarzacz MP3",
+        "in_stock": 23,
+        "category_id": 13
+    }
+},
+{
+    "model": "dao.item",
+    "pk": 24,
+    "fields": {
+        "name": "Samsung HT-J4550",
+        "price": "1259.00",
+        "description": "Zestaw g\u0142o\u015bnik\u00f3w do Twojego kina domowego, \u017ceby twoim s\u0105siadom oczy zbiela\u0142y.",
+        "in_stock": 11,
+        "category_id": 13
+    }
+},
+{
+    "model": "dao.item",
+    "pk": 25,
+    "fields": {
+        "name": "Panasonic DVD-S500EP-K",
+        "price": "199.90",
+        "description": "Odtwarzacz DVD. Zalega w magazynach, bo wszyscy si\u0119 przerzucaj\u0105 na Blu-Raye.",
+        "in_stock": 1024,
+        "category_id": 13
+    }
+},
+{
+    "model": "dao.item",
+    "pk": 26,
+    "fields": {
+        "name": "Samsung Galaxy S7 (G930)",
+        "price": "2199.00",
+        "description": "Samsung Galaxy - jaki jest, ka\u017cdy widzi.",
+        "in_stock": 45,
+        "category_id": 14
+    }
+},
+{
+    "model": "dao.item",
+    "pk": 27,
+    "fields": {
+        "name": "Huawei Y3 Dual SIM",
+        "price": "269.00",
+        "description": "Telefon z DualSIMem, \u017ceby\u015b m\u00f3g\u0142 udawa\u0107 przed znajomymi, \u017ce masz dwa telefony.",
+        "in_stock": 43,
+        "category_id": 14
+    }
+},
+{
+    "model": "dao.item",
+    "pk": 28,
+    "fields": {
+        "name": "myPhone Hammer",
+        "price": "179.00",
+        "description": "Telefon z funkcj\u0105 \u0142omu.",
+        "in_stock": 29,
+        "category_id": 14
+    }
+},
+{
+    "model": "dao.item",
+    "pk": 29,
+    "fields": {
+        "name": "Microsoft Surface Pro 4 128GB",
+        "price": "3999.00",
+        "description": "Tablet z funkcj\u0105 laptopa i milionem innych bajerk\u00f3w.",
+        "in_stock": 22,
+        "category_id": 14
+    }
+},
+{
+    "model": "dao.item",
+    "pk": 30,
+    "fields": {
+        "name": "Samsung Galaxy Tab E",
+        "price": "669.00",
+        "description": "Grubo\u015b\u0107 8,5mm. L\u017cejszy ni\u017c kiedykolwiek wcze\u015bniej. Nowe proporcje ekranu. Doskona\u0142y do czytania.",
+        "in_stock": 77,
+        "category_id": 14
+    }
+},
+{
+    "model": "dao.item",
+    "pk": 31,
+    "fields": {
+        "name": "Microsoft Office 365 Personal PL - licencja na rok",
+        "price": "299.00",
+        "description": "Jak wy\u017cej. Office na rok.",
+        "in_stock": 19,
+        "category_id": 15
+    }
+},
+{
+    "model": "dao.item",
+    "pk": 32,
+    "fields": {
+        "name": "Adobe Dreamweaver CC",
+        "price": "799.00",
+        "description": "Do projektowania stron.",
+        "in_stock": 65,
+        "category_id": 15
+    }
+},
+{
+    "model": "dao.item",
+    "pk": 33,
+    "fields": {
+        "name": "Microsoft Windows Home 10 32/64 bit BOX USB PL",
+        "price": "499.00",
+        "description": "Jeden egzemplarz na wystaw\u0119, bo i tak zaci\u0105gniesz to z torrent\u00f3w.",
+        "in_stock": 1,
+        "category_id": 15
+    }
+},
+{
+    "model": "dao.item",
+    "pk": 34,
+    "fields": {
+        "name": "CorelDRAW Graphics Suite X6 Special Edition PL",
+        "price": "649.00",
+        "description": "Program do obr\u00f3bki grafiki. Z niewyja\u015bnionych przyczyn niepopularny w\u015br\u00f3d student\u00f3w wydzia\u0142u EiTI.",
+        "in_stock": 31,
+        "category_id": 15
+    }
+},
+{
+    "model": "dao.item",
+    "pk": 35,
+    "fields": {
+        "name": "ESET NOD32 Antivirus",
+        "price": "499.00",
+        "description": "Najlepszy. Antywirus. Ever.",
+        "in_stock": 46,
+        "category_id": 15
+    }
+},
+{
+    "model": "dao.category",
+    "pk": 11,
+    "fields": {
+        "name": "Sprzet AGD"
+    }
+},
+{
+    "model": "dao.category",
+    "pk": 12,
+    "fields": {
+        "name": "Komputery i Peryferia PC"
+    }
+},
+{
+    "model": "dao.category",
+    "pk": 13,
+    "fields": {
+        "name": "Telewizory/RTV"
+    }
+},
+{
+    "model": "dao.category",
+    "pk": 14,
+    "fields": {
+        "name": "Telefony i Tablety"
+    }
+},
+{
+    "model": "dao.category",
+    "pk": 15,
+    "fields": {
+        "name": "Oprogramowanie"
+    }
+},
+{
+    "model": "dao.review",
+    "pk": 1,
+    "fields": {
+        "rating": 1,
+        "comment": "Nie dzia\u0142a. \u0141apa w d\u00f3\u0142. Nie pozdrawiam.",
+        "date": "2016-05-16T22:00:00Z",
+        "client_id": 12,
+        "item_id": 11
+    }
+},
+{
+    "model": "dao.review",
+    "pk": 2,
+    "fields": {
+        "rating": 2,
+        "comment": "S\u0142u\u017cy tylko do ko\u0144ca gwarancji. Nie polecam.",
+        "date": "2016-01-04T23:00:00Z",
+        "client_id": 15,
+        "item_id": 11
+    }
+},
+{
+    "model": "dao.review",
+    "pk": 3,
+    "fields": {
+        "rating": 3,
+        "comment": "Mo\u017ce by\u0107, cho\u0107 s\u0142abo wypada ergonomia pracy.",
+        "date": "2016-03-16T23:00:00Z",
+        "client_id": 13,
+        "item_id": 11
+    }
+},
+{
+    "model": "dao.review",
+    "pk": 4,
+    "fields": {
+        "rating": 4,
+        "comment": "Bliskie idea\u0142u, ale z zasady nigdy nie daj\u0119 5.",
+        "date": "2016-10-14T22:00:00Z",
+        "client_id": 12,
+        "item_id": 12
+    }
+},
+{
+    "model": "dao.review",
+    "pk": 5,
+    "fields": {
+        "rating": 5,
+        "comment": "Polecam - Jeanette Kalyta.",
+        "date": "2016-03-16T23:00:00Z",
+        "client_id": 11,
+        "item_id": 12
+    }
+},
+{
+    "model": "dao.review",
+    "pk": 6,
+    "fields": {
+        "rating": 1,
+        "comment": "Nie dzia\u0142a. \u0141apa w d\u00f3\u0142. Nie pozdrawiam.",
+        "date": "2016-10-15T22:00:00Z",
+        "client_id": 15,
+        "item_id": 12
+    }
+},
+{
+    "model": "dao.review",
+    "pk": 7,
+    "fields": {
+        "rating": 2,
+        "comment": "S\u0142u\u017cy tylko do ko\u0144ca gwarancji. Nie polecam.",
+        "date": "2016-01-04T23:00:00Z",
+        "client_id": 12,
+        "item_id": 13
+    }
+},
+{
+    "model": "dao.review",
+    "pk": 8,
+    "fields": {
+        "rating": 3,
+        "comment": "Mo\u017ce by\u0107, cho\u0107 s\u0142abo wypada ergonomia pracy.",
+        "date": "2016-03-16T23:00:00Z",
+        "client_id": 14,
+        "item_id": 13
+    }
+},
+{
+    "model": "dao.review",
+    "pk": 9,
+    "fields": {
+        "rating": 4,
+        "comment": "Bliskie idea\u0142u, ale z zasady nigdy nie daj\u0119 5.",
+        "date": "2016-10-16T22:00:00Z",
+        "client_id": 13,
+        "item_id": 13
+    }
+},
+{
+    "model": "dao.review",
+    "pk": 10,
+    "fields": {
+        "rating": 5,
+        "comment": "Polecam - Jeanette Kalyta.",
+        "date": "2016-05-17T22:00:00Z",
+        "client_id": 11,
+        "item_id": 14
+    }
+},
+{
+    "model": "dao.review",
+    "pk": 11,
+    "fields": {
+        "rating": 1,
+        "comment": "Nie dzia\u0142a. \u0141apa w d\u00f3\u0142. Nie pozdrawiam.",
+        "date": "2016-01-04T23:00:00Z",
+        "client_id": 15,
+        "item_id": 14
+    }
+},
+{
+    "model": "dao.review",
+    "pk": 12,
+    "fields": {
+        "rating": 2,
+        "comment": "S\u0142u\u017cy tylko do ko\u0144ca gwarancji. Nie polecam.",
+        "date": "2016-10-22T22:00:00Z",
+        "client_id": 13,
+        "item_id": 14
+    }
+},
+{
+    "model": "dao.review",
+    "pk": 13,
+    "fields": {
+        "rating": 3,
+        "comment": "Mo\u017ce by\u0107, cho\u0107 s\u0142abo wypada ergonomia pracy.",
+        "date": "2016-05-11T22:00:00Z",
+        "client_id": 12,
+        "item_id": 15
+    }
+},
+{
+    "model": "dao.review",
+    "pk": 14,
+    "fields": {
+        "rating": 4,
+        "comment": "Bliskie idea\u0142u, ale z zasady nigdy nie daj\u0119 5.",
+        "date": "2016-10-04T22:00:00Z",
+        "client_id": 13,
+        "item_id": 15
+    }
+},
+{
+    "model": "dao.review",
+    "pk": 15,
+    "fields": {
+        "rating": 5,
+        "comment": "Polecam - Jeanette Kalyta.",
+        "date": "2016-05-17T22:00:00Z",
+        "client_id": 11,
+        "item_id": 15
+    }
+},
+{
+    "model": "dao.review",
+    "pk": 16,
+    "fields": {
+        "rating": 1,
+        "comment": "Nie dzia\u0142a. \u0141apa w d\u00f3\u0142. Nie pozdrawiam.",
+        "date": "2016-05-10T22:00:00Z",
+        "client_id": 12,
+        "item_id": 16
+    }
+},
+{
+    "model": "dao.review",
+    "pk": 17,
+    "fields": {
+        "rating": 2,
+        "comment": "S\u0142u\u017cy tylko do ko\u0144ca gwarancji. Nie polecam.",
+        "date": "2016-03-13T23:00:00Z",
+        "client_id": 14,
+        "item_id": 16
+    }
+},
+{
+    "model": "dao.review",
+    "pk": 18,
+    "fields": {
+        "rating": 3,
+        "comment": "Mo\u017ce by\u0107, cho\u0107 s\u0142abo wypada ergonomia pracy.",
+        "date": "2016-01-20T23:00:00Z",
+        "client_id": 15,
+        "item_id": 16
+    }
+},
+{
+    "model": "dao.review",
+    "pk": 19,
+    "fields": {
+        "rating": 4,
+        "comment": "Bliskie idea\u0142u, ale z zasady nigdy nie daj\u0119 5.",
+        "date": "2016-05-09T22:00:00Z",
+        "client_id": 14,
+        "item_id": 17
+    }
+},
+{
+    "model": "dao.review",
+    "pk": 20,
+    "fields": {
+        "rating": 5,
+        "comment": "Polecam - Jeanette Kalyta.",
+        "date": "2016-10-15T22:00:00Z",
+        "client_id": 11,
+        "item_id": 17
+    }
+},
+{
+    "model": "dao.review",
+    "pk": 21,
+    "fields": {
+        "rating": 1,
+        "comment": "Nie dzia\u0142a. \u0141apa w d\u00f3\u0142. Nie pozdrawiam.",
+        "date": "2016-05-12T22:00:00Z",
+        "client_id": 13,
+        "item_id": 17
+    }
+},
+{
+    "model": "dao.review",
+    "pk": 22,
+    "fields": {
+        "rating": 2,
+        "comment": "S\u0142u\u017cy tylko do ko\u0144ca gwarancji. Nie polecam.",
+        "date": "2016-05-26T22:00:00Z",
+        "client_id": 14,
+        "item_id": 18
+    }
+},
+{
+    "model": "dao.review",
+    "pk": 23,
+    "fields": {
+        "rating": 3,
+        "comment": "Mo\u017ce by\u0107, cho\u0107 s\u0142abo wypada ergonomia pracy.",
+        "date": "2016-01-02T23:00:00Z",
+        "client_id": 13,
+        "item_id": 18
+    }
+},
+{
+    "model": "dao.review",
+    "pk": 24,
+    "fields": {
+        "rating": 4,
+        "comment": "Bliskie idea\u0142u, ale z zasady nigdy nie daj\u0119 5.",
+        "date": "2016-05-09T22:00:00Z",
+        "client_id": 12,
+        "item_id": 18
+    }
+},
+{
+    "model": "dao.review",
+    "pk": 25,
+    "fields": {
+        "rating": 5,
+        "comment": "Polecam - Jeanette Kalyta.",
+        "date": "2016-10-14T22:00:00Z",
+        "client_id": 11,
+        "item_id": 19
+    }
+},
+{
+    "model": "dao.review",
+    "pk": 26,
+    "fields": {
+        "rating": 1,
+        "comment": "Nie dzia\u0142a. \u0141apa w d\u00f3\u0142. Nie pozdrawiam.",
+        "date": "2016-03-16T23:00:00Z",
+        "client_id": 15,
+        "item_id": 19
+    }
+},
+{
+    "model": "dao.review",
+    "pk": 27,
+    "fields": {
+        "rating": 2,
+        "comment": "S\u0142u\u017cy tylko do ko\u0144ca gwarancji. Nie polecam.",
+        "date": "2016-10-14T22:00:00Z",
+        "client_id": 12,
+        "item_id": 19
+    }
+},
+{
+    "model": "dao.review",
+    "pk": 28,
+    "fields": {
+        "rating": 3,
+        "comment": "Mo\u017ce by\u0107, cho\u0107 s\u0142abo wypada ergonomia pracy.",
+        "date": "2016-05-11T22:00:00Z",
+        "client_id": 13,
+        "item_id": 20
+    }
+},
+{
+    "model": "dao.review",
+    "pk": 29,
+    "fields": {
+        "rating": 4,
+        "comment": "Bliskie idea\u0142u, ale z zasady nigdy nie daj\u0119 5.",
+        "date": "2016-03-15T23:00:00Z",
+        "client_id": 12,
+        "item_id": 20
+    }
+},
+{
+    "model": "dao.review",
+    "pk": 30,
+    "fields": {
+        "rating": 5,
+        "comment": "Polecam - Jeanette Kalyta.",
+        "date": "2016-03-13T23:00:00Z",
+        "client_id": 11,
+        "item_id": 20
+    }
+},
+{
+    "model": "dao.review",
+    "pk": 31,
+    "fields": {
+        "rating": 1,
+        "comment": "Nie dzia\u0142a. \u0141apa w d\u00f3\u0142. Nie pozdrawiam.",
+        "date": "2016-05-16T22:00:00Z",
+        "client_id": 14,
+        "item_id": 21
+    }
+},
+{
+    "model": "dao.review",
+    "pk": 32,
+    "fields": {
+        "rating": 2,
+        "comment": "S\u0142u\u017cy tylko do ko\u0144ca gwarancji. Nie polecam.",
+        "date": "2016-03-16T23:00:00Z",
+        "client_id": 13,
+        "item_id": 21
+    }
+},
+{
+    "model": "dao.review",
+    "pk": 33,
+    "fields": {
+        "rating": 3,
+        "comment": "Mo\u017ce by\u0107, cho\u0107 s\u0142abo wypada ergonomia pracy.",
+        "date": "2016-01-04T23:00:00Z",
+        "client_id": 12,
+        "item_id": 21
+    }
+},
+{
+    "model": "dao.review",
+    "pk": 34,
+    "fields": {
+        "rating": 4,
+        "comment": "Bliskie idea\u0142u, ale z zasady nigdy nie daj\u0119 5.",
+        "date": "2016-03-22T23:00:00Z",
+        "client_id": 14,
+        "item_id": 22
+    }
+},
+{
+    "model": "dao.review",
+    "pk": 35,
+    "fields": {
+        "rating": 5,
+        "comment": "Polecam - Jeanette Kalyta.",
+        "date": "2016-05-15T22:00:00Z",
+        "client_id": 11,
+        "item_id": 22
+    }
+},
+{
+    "model": "dao.review",
+    "pk": 36,
+    "fields": {
+        "rating": 1,
+        "comment": "Nie dzia\u0142a. \u0141apa w d\u00f3\u0142. Nie pozdrawiam.",
+        "date": "2016-10-14T22:00:00Z",
+        "client_id": 15,
+        "item_id": 22
+    }
+},
+{
+    "model": "dao.review",
+    "pk": 37,
+    "fields": {
+        "rating": 2,
+        "comment": "S\u0142u\u017cy tylko do ko\u0144ca gwarancji. Nie polecam.",
+        "date": "2016-10-14T22:00:00Z",
+        "client_id": 15,
+        "item_id": 23
+    }
+},
+{
+    "model": "dao.review",
+    "pk": 38,
+    "fields": {
+        "rating": 3,
+        "comment": "Mo\u017ce by\u0107, cho\u0107 s\u0142abo wypada ergonomia pracy.",
+        "date": "2016-05-16T22:00:00Z",
+        "client_id": 14,
+        "item_id": 23
+    }
+},
+{
+    "model": "dao.review",
+    "pk": 39,
+    "fields": {
+        "rating": 4,
+        "comment": "Bliskie idea\u0142u, ale z zasady nigdy nie daj\u0119 5.",
+        "date": "2016-05-16T22:00:00Z",
+        "client_id": 12,
+        "item_id": 23
+    }
+},
+{
+    "model": "dao.review",
+    "pk": 40,
+    "fields": {
+        "rating": 5,
+        "comment": "Polecam - Jeanette Kalyta.",
+        "date": "2016-01-04T23:00:00Z",
+        "client_id": 11,
+        "item_id": 24
+    }
+},
+{
+    "model": "dao.review",
+    "pk": 41,
+    "fields": {
+        "rating": 1,
+        "comment": "Nie dzia\u0142a. \u0141apa w d\u00f3\u0142. Nie pozdrawiam.",
+        "date": "2016-03-22T23:00:00Z",
+        "client_id": 15,
+        "item_id": 24
+    }
+},
+{
+    "model": "dao.review",
+    "pk": 42,
+    "fields": {
+        "rating": 2,
+        "comment": "S\u0142u\u017cy tylko do ko\u0144ca gwarancji. Nie polecam.",
+        "date": "2016-05-16T22:00:00Z",
+        "client_id": 13,
+        "item_id": 24
+    }
+},
+{
+    "model": "dao.review",
+    "pk": 43,
+    "fields": {
+        "rating": 3,
+        "comment": "Mo\u017ce by\u0107, cho\u0107 s\u0142abo wypada ergonomia pracy.",
+        "date": "2016-03-26T23:00:00Z",
+        "client_id": 14,
+        "item_id": 25
+    }
+},
+{
+    "model": "dao.review",
+    "pk": 44,
+    "fields": {
+        "rating": 4,
+        "comment": "Bliskie idea\u0142u, ale z zasady nigdy nie daj\u0119 5.",
+        "date": "2016-05-16T22:00:00Z",
+        "client_id": 12,
+        "item_id": 25
+    }
+},
+{
+    "model": "dao.review",
+    "pk": 45,
+    "fields": {
+        "rating": 5,
+        "comment": "Polecam - Jeanette Kalyta.",
+        "date": "2016-05-13T22:00:00Z",
+        "client_id": 11,
+        "item_id": 25
+    }
+},
+{
+    "model": "dao.review",
+    "pk": 46,
+    "fields": {
+        "rating": 1,
+        "comment": "Nie dzia\u0142a. \u0141apa w d\u00f3\u0142. Nie pozdrawiam.",
+        "date": "2016-03-16T23:00:00Z",
+        "client_id": 14,
+        "item_id": 26
+    }
+},
+{
+    "model": "dao.review",
+    "pk": 47,
+    "fields": {
+        "rating": 2,
+        "comment": "S\u0142u\u017cy tylko do ko\u0144ca gwarancji. Nie polecam.",
+        "date": "2016-05-11T22:00:00Z",
+        "client_id": 12,
+        "item_id": 26
+    }
+},
+{
+    "model": "dao.review",
+    "pk": 48,
+    "fields": {
+        "rating": 3,
+        "comment": "Mo\u017ce by\u0107, cho\u0107 s\u0142abo wypada ergonomia pracy.",
+        "date": "2016-01-24T23:00:00Z",
+        "client_id": 15,
+        "item_id": 26
+    }
+},
+{
+    "model": "dao.review",
+    "pk": 49,
+    "fields": {
+        "rating": 4,
+        "comment": "Bliskie idea\u0142u, ale z zasady nigdy nie daj\u0119 5.",
+        "date": "2016-01-04T23:00:00Z",
+        "client_id": 15,
+        "item_id": 27
+    }
+},
+{
+    "model": "dao.review",
+    "pk": 50,
+    "fields": {
+        "rating": 5,
+        "comment": "Polecam - Jeanette Kalyta.",
+        "date": "2016-05-16T22:00:00Z",
+        "client_id": 11,
+        "item_id": 27
+    }
+},
+{
+    "model": "dao.review",
+    "pk": 51,
+    "fields": {
+        "rating": 1,
+        "comment": "Nie dzia\u0142a. \u0141apa w d\u00f3\u0142. Nie pozdrawiam.",
+        "date": "2016-01-04T23:00:00Z",
+        "client_id": 12,
+        "item_id": 27
+    }
+},
+{
+    "model": "dao.review",
+    "pk": 52,
+    "fields": {
+        "rating": 2,
+        "comment": "S\u0142u\u017cy tylko do ko\u0144ca gwarancji. Nie polecam.",
+        "date": "2016-10-14T22:00:00Z",
+        "client_id": 13,
+        "item_id": 28
+    }
+},
+{
+    "model": "dao.review",
+    "pk": 53,
+    "fields": {
+        "rating": 3,
+        "comment": "Mo\u017ce by\u0107, cho\u0107 s\u0142abo wypada ergonomia pracy.",
+        "date": "2016-01-04T23:00:00Z",
+        "client_id": 14,
+        "item_id": 28
+    }
+},
+{
+    "model": "dao.review",
+    "pk": 54,
+    "fields": {
+        "rating": 4,
+        "comment": "Bliskie idea\u0142u, ale z zasady nigdy nie daj\u0119 5.",
+        "date": "2016-05-28T22:00:00Z",
+        "client_id": 12,
+        "item_id": 28
+    }
+},
+{
+    "model": "dao.review",
+    "pk": 55,
+    "fields": {
+        "rating": 5,
+        "comment": "Polecam - Jeanette Kalyta.",
+        "date": "2016-10-12T22:00:00Z",
+        "client_id": 11,
+        "item_id": 29
+    }
+},
+{
+    "model": "dao.review",
+    "pk": 56,
+    "fields": {
+        "rating": 1,
+        "comment": "Nie dzia\u0142a. \u0141apa w d\u00f3\u0142. Nie pozdrawiam.",
+        "date": "2016-05-16T22:00:00Z",
+        "client_id": 15,
+        "item_id": 29
+    }
+},
+{
+    "model": "dao.review",
+    "pk": 57,
+    "fields": {
+        "rating": 2,
+        "comment": "S\u0142u\u017cy tylko do ko\u0144ca gwarancji. Nie polecam.",
+        "date": "2016-03-16T23:00:00Z",
+        "client_id": 12,
+        "item_id": 29
+    }
+},
+{
+    "model": "dao.review",
+    "pk": 58,
+    "fields": {
+        "rating": 3,
+        "comment": "Mo\u017ce by\u0107, cho\u0107 s\u0142abo wypada ergonomia pracy.",
+        "date": "2016-01-04T23:00:00Z",
+        "client_id": 12,
+        "item_id": 30
+    }
+},
+{
+    "model": "dao.review",
+    "pk": 59,
+    "fields": {
+        "rating": 4,
+        "comment": "Bliskie idea\u0142u, ale z zasady nigdy nie daj\u0119 5.",
+        "date": "2016-10-14T22:00:00Z",
+        "client_id": 15,
+        "item_id": 30
+    }
+},
+{
+    "model": "dao.review",
+    "pk": 60,
+    "fields": {
+        "rating": 5,
+        "comment": "Polecam - Jeanette Kalyta.",
+        "date": "2016-05-11T22:00:00Z",
+        "client_id": 11,
+        "item_id": 30
+    }
+},
+{
+    "model": "dao.review",
+    "pk": 61,
+    "fields": {
+        "rating": 1,
+        "comment": "Nie dzia\u0142a. \u0141apa w d\u00f3\u0142. Nie pozdrawiam.",
+        "date": "2016-05-20T22:00:00Z",
+        "client_id": 14,
+        "item_id": 31
+    }
+},
+{
+    "model": "dao.review",
+    "pk": 62,
+    "fields": {
+        "rating": 2,
+        "comment": "S\u0142u\u017cy tylko do ko\u0144ca gwarancji. Nie polecam.",
+        "date": "2016-03-17T23:00:00Z",
+        "client_id": 12,
+        "item_id": 31
+    }
+},
+{
+    "model": "dao.review",
+    "pk": 63,
+    "fields": {
+        "rating": 3,
+        "comment": "Mo\u017ce by\u0107, cho\u0107 s\u0142abo wypada ergonomia pracy.",
+        "date": "2016-03-12T23:00:00Z",
+        "client_id": 13,
+        "item_id": 31
+    }
+},
+{
+    "model": "dao.review",
+    "pk": 64,
+    "fields": {
+        "rating": 4,
+        "comment": "Bliskie idea\u0142u, ale z zasady nigdy nie daj\u0119 5.",
+        "date": "2016-05-14T22:00:00Z",
+        "client_id": 15,
+        "item_id": 32
+    }
+},
+{
+    "model": "dao.review",
+    "pk": 65,
+    "fields": {
+        "rating": 5,
+        "comment": "Polecam - Jeanette Kalyta.",
+        "date": "2016-10-14T22:00:00Z",
+        "client_id": 11,
+        "item_id": 32
+    }
+},
+{
+    "model": "dao.review",
+    "pk": 66,
+    "fields": {
+        "rating": 1,
+        "comment": "Nie dzia\u0142a. \u0141apa w d\u00f3\u0142. Nie pozdrawiam.",
+        "date": "2016-05-26T22:00:00Z",
+        "client_id": 12,
+        "item_id": 32
+    }
+},
+{
+    "model": "dao.review",
+    "pk": 67,
+    "fields": {
+        "rating": 2,
+        "comment": "S\u0142u\u017cy tylko do ko\u0144ca gwarancji. Nie polecam.",
+        "date": "2016-03-16T23:00:00Z",
+        "client_id": 12,
+        "item_id": 33
+    }
+},
+{
+    "model": "dao.review",
+    "pk": 68,
+    "fields": {
+        "rating": 3,
+        "comment": "Mo\u017ce by\u0107, cho\u0107 s\u0142abo wypada ergonomia pracy.",
+        "date": "2016-10-24T22:00:00Z",
+        "client_id": 14,
+        "item_id": 33
+    }
+},
+{
+    "model": "dao.review",
+    "pk": 69,
+    "fields": {
+        "rating": 4,
+        "comment": "Bliskie idea\u0142u, ale z zasady nigdy nie daj\u0119 5.",
+        "date": "2016-05-16T22:00:00Z",
+        "client_id": 15,
+        "item_id": 33
+    }
+},
+{
+    "model": "dao.review",
+    "pk": 70,
+    "fields": {
+        "rating": 5,
+        "comment": "Polecam - Jeanette Kalyta.",
+        "date": "2016-03-26T23:00:00Z",
+        "client_id": 11,
+        "item_id": 34
+    }
+},
+{
+    "model": "dao.review",
+    "pk": 71,
+    "fields": {
+        "rating": 1,
+        "comment": "Nie dzia\u0142a. \u0141apa w d\u00f3\u0142. Nie pozdrawiam.",
+        "date": "2016-10-14T22:00:00Z",
+        "client_id": 12,
+        "item_id": 34
+    }
+},
+{
+    "model": "dao.review",
+    "pk": 72,
+    "fields": {
+        "rating": 2,
+        "comment": "S\u0142u\u017cy tylko do ko\u0144ca gwarancji. Nie polecam.",
+        "date": "2016-03-26T23:00:00Z",
+        "client_id": 15,
+        "item_id": 34
+    }
+},
+{
+    "model": "dao.review",
+    "pk": 73,
+    "fields": {
+        "rating": 3,
+        "comment": "Mo\u017ce by\u0107, cho\u0107 s\u0142abo wypada ergonomia pracy.",
+        "date": "2016-03-16T23:00:00Z",
+        "client_id": 13,
+        "item_id": 35
+    }
+},
+{
+    "model": "dao.review",
+    "pk": 74,
+    "fields": {
+        "rating": 4,
+        "comment": "Bliskie idea\u0142u, ale z zasady nigdy nie daj\u0119 5.",
+        "date": "2016-10-24T22:00:00Z",
+        "client_id": 12,
+        "item_id": 35
+    }
+},
+{
+    "model": "dao.review",
+    "pk": 75,
+    "fields": {
+        "rating": 5,
+        "comment": "Polecam - Jeanette Kalyta.",
+        "date": "2016-10-14T22:00:00Z",
+        "client_id": 11,
+        "item_id": 35
+    }
+},
+{
+    "model": "accounts.customuser",
+    "pk": 11,
+    "fields": {
+        "password": "dfsfddfa",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "jeanettedarc75",
+        "first_name": "Jeanette",
+        "last_name": "Kalyta",
+        "email": "jkalyta@junkmail.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2015-12-31T23:00:00Z",
+        "user_type": "C",
+        "birthdate": "1975-02-21",
+        "adress": "ul. Polecana 1, 34-237 \u017banet\u00f3w",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "accounts.customuser",
+    "pk": 12,
+    "fields": {
+        "password": "gfghdrrfghs",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "bigboy21",
+        "first_name": "Wiktor",
+        "last_name": "Miko\u0142ajuw",
+        "email": "wiki-miki@spameater.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2015-12-31T23:00:00Z",
+        "user_type": "C",
+        "birthdate": "1995-02-23",
+        "adress": "ul. D. Trumpa 34, 43-466 \u015awierkowiec",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "accounts.customuser",
+    "pk": 13,
+    "fields": {
+        "password": "soipeg",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "janek",
+        "first_name": "Janusz",
+        "last_name": "Wyrwid\u0119bski",
+        "email": "janek3923@coolnet.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2015-12-31T23:00:00Z",
+        "user_type": "C",
+        "birthdate": "1984-04-07",
+        "adress": "ul. Zwyci\u0119stwa 28 m. 15, 50-505 Czarne Pole",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "accounts.customuser",
+    "pk": 14,
+    "fields": {
+        "password": "fdjsdr",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "wojtaskiller",
+        "first_name": "Wojciech",
+        "last_name": "Walig\u00f3rski",
+        "email": "wojtekkiller7@coolnet.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2015-12-31T23:00:00Z",
+        "user_type": "C",
+        "birthdate": "1986-10-15",
+        "adress": "ul. 31 listopada 20, 50-505 Czarne Pole",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "accounts.customuser",
+    "pk": 15,
+    "fields": {
+        "password": "sdgsaq",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "momo90",
+        "first_name": "Mohammed",
+        "last_name": "Chang",
+        "email": "momochang@gmail.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2015-12-31T23:00:00Z",
+        "user_type": "C",
+        "birthdate": "1990-06-19",
+        "adress": "ul. D\u0142uga 15 m. 2, 20-982 Stanis\u0142awiec",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "accounts.client",
+    "pk": 11,
+    "fields": {}
+},
+{
+    "model": "accounts.client",
+    "pk": 12,
+    "fields": {}
+},
+{
+    "model": "accounts.client",
+    "pk": 13,
+    "fields": {}
+},
+{
+    "model": "accounts.client",
+    "pk": 14,
+    "fields": {}
+},
+{
+    "model": "accounts.client",
+    "pk": 15,
+    "fields": {}
+}
+]
