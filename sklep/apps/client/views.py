@@ -10,12 +10,17 @@ from django.utils import timezone
 import sys, traceback
 import os
 
-def index(request):
-    return render(request, 'my-orders.html')
 
-def get_categories(request):
+def base_context():
+    """
+    Zwraca context z rzeczami potrzebnymi do wygenerowania szablonu base.html
+    """
     cats = Category.objects.all()
-    return cats
+    return {'cats': cats}
+
+def index(request):
+    context = base_context()
+    return render(request, 'index.html', context)
 
 def get_orders(request):
     try:
@@ -48,12 +53,14 @@ def product_reviews(prod_id=None):
             pass
 
 def product_detail(request, prod_id=None):
+    context = base_context()
     if prod_id is not None:
         try:
             product = Item.objects.get(id=prod_id)
             reviewList = product_reviews(prod_id)
-            return render(request, template_name='product-details.html',
-                          context={'product' : product, 'reviews' : reviewList})
+            starsCount = range(1,6)
+            context.update({'product': product, 'reviews': reviewList, 'stars': starsCount})
+            return render(request, template_name='product-details.html', context=context)
 
         except Item.DoesNotExist:
             return render(request.path)
@@ -84,9 +91,11 @@ def db_search_items(cat_id=None, name=None):
     return filtered_items
 
 def search_items(request, cat_id=None, name=None):
-    print(request.GET["cat_id"])
-    print(request.GET["name"])
-    return render(request, 'index.html')
+    readval = lambda x: request.GET.get(x, None)
+    items = db_search_items(readval("cat_id"), readval("name"))
+    context = base_context()
+    context.update({'items':items})
+    return render(request, 'items.html', context)
 
 @login_required
 def make_order(request):

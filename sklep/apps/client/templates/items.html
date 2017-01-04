@@ -1,13 +1,14 @@
 {% extends "index.html" %}
 {% block content %}
-<h1 class="text-left">Tutaj nazwa kategorii.</h1>
+{% for item in items %}
+{# <h1 class="text-left">{{ item.category_id.name }}</h1> #}
 <hr>
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-4">
             <div class="panel panel-primary">
-                <a href="#" class="details-button">
-                    <div class="panel-heading details">Telewizor 40" Szajsung</div>
+                <a href="{% url 'detail' item.id %}" class="details-button">
+                  <div class="panel-heading details">{{ item.name }}</div>
                     <div class="panel-body">
                         <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%"
                              alt="Image">
@@ -17,7 +18,7 @@
                 <div class="panel-footer">
                     <div class="row">
                         <div class="well-md">
-                            <p>1999zł</p>
+                          <p>{{ item.price }}zł</p>
                         </div>
                         <button type="button" class="btn btn-success btn-md"><span
                                 class="glyphicon glyphicon-plus"></span> Dodaj
@@ -29,4 +30,5 @@
     </div>
 </div>
 <br>
+{% endfor %}
 {% endblock %}
