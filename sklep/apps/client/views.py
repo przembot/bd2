@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from apps.dao.models import *
 from apps.accounts.models import Client
 import json
@@ -58,7 +58,7 @@ def get_orders(request):
                       context=context)
 
     except Client.DoesNotExist:
-        return render(request.path)
+        return redirect('/')
 
 def product_reviews(prod_id=None):
     """
@@ -86,7 +86,7 @@ def product_detail(request, prod_id=None):
             return render(request, template_name='product-details.html', context=context)
 
         except Item.DoesNotExist:
-            return render(request.path)
+            return redirect('/')
 
 def db_search_items(cat_id=None, name=None):
     """
@@ -130,9 +130,11 @@ def search_items(request):
                     'items_row' : items})
     return render(request, 'items.html', context)
 
-@login_required
 def make_order(request):
     if request.method == 'POST':
+        if not request.user.is_authenticated:
+            return HttpResponse('Unauthorized', status=401)
+
         #json_data = json.loads(request.body) #for python2?
         order = json.loads(request.body.decode("utf-8"))
 
@@ -171,7 +173,10 @@ def make_order(request):
                   str(e))
             return HttpResponseBadRequest()
 
-    return HttpResponse()
+        return HttpResponse()
+
+    elif request.method == 'GET':
+        return redirect('/')
 
 def group_elements(data, n):
     """
