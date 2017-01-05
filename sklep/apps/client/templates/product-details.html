@@ -1,4 +1,5 @@
 {% extends "index.html" %}
+{% load static %}
 {% block content %}
 <h2 class="text-left">
     <a href="#" class="btn btn-default btn-lg"><span class="glyphicon glyphicon-chevron-left"></span> Powrót</a>
@@ -11,7 +12,7 @@
         <div class="col-md-4">
             <div class="panel panel-primary">
               <div class="panel-heading">{{ product.name }}</div>
-                <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE"
+                <div class="panel-body"><img src="{% get_static_prefix %}{{product.category_id.id}}.jpg"
                                              class="img-responsive" style="width:100%" alt="Image"></div>
                 <div class="panel-footer">
                     <div class="row">

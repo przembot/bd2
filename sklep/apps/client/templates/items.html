@@ -1,4 +1,6 @@
 {% extends "index.html" %}
+{% load static %}
+
 {% block content %}
 <h1 class="text-left">
     {% if current_cat %}
@@ -6,7 +8,6 @@
     {% endif %}
 </h1>
 <hr>
-
 
 {% for items_group in items %}
 <div class="container-fluid">
@@ -17,7 +18,7 @@
                 <a href="{% url 'detail' item.id %}" class="details-button">
                     <div class="panel-heading details">{{ item.name }}</div>
                     <div class="panel-body">
-                        <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%"
+                        <img src="{% get_static_prefix %}{{current_cat.id}}.jpg" class="img-responsive" style="width:100%"
                              alt="Image">
                     </div>
                 </a>
