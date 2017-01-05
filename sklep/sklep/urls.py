@@ -16,10 +16,12 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 from apps.accounts.views import user_login, CustomRegistrationView
+from django.contrib.auth.views import logout
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^', include('apps.client.urls')),
-    url(r'^login/', user_login, name="login"),
+    url(r'^login/$', user_login, name="login"),
+    url(r'^logout/$', logout, name="logout"),
     url(r'^register/$', CustomRegistrationView.as_view(), name="register"),
 ]

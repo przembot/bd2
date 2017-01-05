@@ -39,15 +39,12 @@
                         {% block navbar-right %}
                         <li><a href="#">Kontakt</a></li>
 
-                        <!--{$ if user.is_authenticated %}-->
-                        {% if True %}
-                        <li><a href="{% url 'myorders' %}">Moje zamówienia</a></li>
-                        <li><a href="#"><span class="glyphicon glyphicon-log-out"></span> Wyloguj</a></li>
-
+                        {% if user.is_authenticated %}
+                            <li><a href="{% url 'myorders' %}">Moje zamówienia</a></li>
+                            <li><a href="{% url 'logout' %}?next=/"><span class="glyphicon glyphicon-log-out"></span> Wyloguj</a></li>
                         {% else %}
-                        <li><a href="{% url 'register' %}"><span class="glyphicon glyphicon-user"></span>Rejestracja</a></li>
-                        <li><a href="{% url 'login' %}"><span class="glyphicon glyphicon-log-in"></span> Zaloguj</a>
-
+                            <li><a href="{% url 'register' %}"><span class="glyphicon glyphicon-user"></span>Rejestracja</a></li>
+                            <li><a href="{% url 'login' %}"><span class="glyphicon glyphicon-log-in"></span> Zaloguj</a>
                         {% endif %}
                         </li>
                         {% endblock %}
