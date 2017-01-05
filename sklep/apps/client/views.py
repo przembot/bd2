@@ -9,6 +9,19 @@ from django.contrib.auth.decorators import login_required
 from django.utils import timezone
 import sys, traceback
 import os
+from multiprocessing import Lock
+
+global mutex
+mutex = None
+
+def getMutex():
+    """
+    Mutex sluzacy do tworzenia zamowienia
+    """
+    global mutex
+    if mutex is None:
+        mutex = Lock()
+    return mutex
 
 
 def base_context():
@@ -120,30 +133,22 @@ def make_order(request):
                 new_order = Order.objects.create(status_change_date=timezone.now(),
                                                  payment_status=0,
                                                  client_id=client)
-                """
-                Possible hazard condition here
-                if select_for_update() locks row for changing and locking
-                which is true according to Django doc, then it is possible
-                for other thread/process to get wrong count of items in stock
-                and order too many items - Mati
-                FIXME: Need to be analyzed
-                """
                 for itemspec in order['items']:
                     item_id = itemspec['id']
                     amount = itemspec['amount']
 
-                    # select_for_update locks db row until the end of transaction
-                    item = Item.objects.select_for_update().get(id=item_id)
-                    if amount >= 1 and item.in_stock >= amount:
-                        item.in_stock -= amount
-                        item.save()
-                        Order_Item.objects.create(quantity=amount,
-                                                  price=item.price,
-                                                  order_id=new_order,
-                                                  item_id=item)
-                    else:
-                        raise Exception('Wrong ammount supplied for ' +
-                                        'item with id: ' + str(item_id))
+                    with getMutex():
+                        item = Item.objects.select_for_update().get(id=item_id)
+                        if amount >= 1 and item.in_stock >= amount:
+                            item.in_stock -= amount
+                            item.save()
+                            Order_Item.objects.create(quantity=amount,
+                                                      price=item.price,
+                                                      order_id=new_order,
+                                                      item_id=item)
+                        else:
+                            raise Exception('Wrong ammount supplied for ' +
+                                            'item with id: ' + str(item_id))
 
                 if order['invoice'] is True:
                     # create invoice here
