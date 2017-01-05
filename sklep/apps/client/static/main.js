@@ -1,4 +1,26 @@
+function getCookie(c_name)
+{
+    if (document.cookie.length > 0)
+    {
+        c_start = document.cookie.indexOf(c_name + "=");
+        if (c_start != -1)
+        {
+            c_start = c_start + c_name.length + 1;
+            c_end = document.cookie.indexOf(";", c_start);
+            if (c_end == -1) c_end = document.cookie.length;
+            return unescape(document.cookie.substring(c_start,c_end));
+        }
+    }
+    return "";
+}
+
 $(document).ready(function() {
+  $.ajaxSetup({
+    headers: { "X-CSRFToken": getCookie("csrftoken") }
+  });
+  cart = loadCart();
+  if (cart == null)
+    newCart();
   repaintCart();
 });
 
@@ -32,6 +54,40 @@ function cartRemove(id) {
   repaintCart();
 }
 
+// Wysyla zamowienie do serwera
+function sendOrder() {
+  order = new Object();
+  items = listItems();
+  items = items.map(function(i) {
+    var e = new Object();
+    e.id = i.id;
+    e.amount = i.amount;
+    return e;
+  });
+  order.invoice = false; //TODO - sprawdz czy klient chce fakture
+  order.items = items;
+  sendOrderRequest(order, function() { // success
+    alert("Zamówienie złożone pomyślnie!");
+    newCart();
+    repaintCart();
+  }, function() { // failure
+    alert("Zamówienie nieudane :(");
+  });
+}
+
+// Wysyla zapytanie tworzace zamowienie
+function sendOrderRequest(order, onSuccess, onError)
+{
+  $.ajax(
+    { url: '/order/'
+    , success: onSuccess
+    , data: JSON.stringify(order)
+    , contentType: 'application/json'
+    , error: onError
+    , type: 'POST'
+    });
+}
+
 
 function genOneItemHtml(id, name, price, amount) {
   var str = "<div class=\"row\"><div class=\"col-md-4\"><h5 class=\"product-name\"><strong>";
@@ -49,7 +105,11 @@ function genOneItemHtml(id, name, price, amount) {
 function genSumHtml(sum) {
   var str = "<h4 class=\"text-center\">Łącznie <strong>";
   str += sum;
-  str += "zł</strong></h4><button type=\"button\" class=\"btn btn-success btn-md\">";
+  str += "zł</strong></h4><button onclick=\"sendOrder()\" type=\"button\" class=\"btn btn-success btn-md\">";
   str += "<span class=\"glyphicon glyphicon-ok\"></span> Zatwierdź</button>";
   return str;
 }
+
+
+var orderstatuses = new Object();
+orderstatuses[0] = "Złożone";

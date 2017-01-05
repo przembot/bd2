@@ -9,7 +9,6 @@
     <tr>
         <th class="text-center">Data zamówienia</th>
         <th class="text-center">Status</th>
-        <!--Dorobić wyliczanie sumy zamówienia z produktów-->
         <th class="text-center">Suma zamówienia</th>
         <th class="text-center">Produkt</th>
         <th class="text-center">Cena produktu</th>
@@ -19,13 +18,12 @@
     <tbody>
     <tr>
         <!--Trzeba też dorobić mapowanie statusów: {Niepłacone, Opłacone, W realizacji, Gotowe do odbioru, Odebrane, Zrealizowane, Anulowane}-->
-        <!-- TODO: zweryfikowac na przykladowych danych-->
 
     {% for order, items in orders %}
     <tr>
       <td rowspan="2" class="vert-align">{{ order.date }}</td>
       <td rowspan="2" class="vert-align">{{ order.status }}</td>
-      <td rowspan="2" class="vert-align">TODO - total price</td>
+      <td rowspan="2" class="vert-align">{{ total }}zł</td>
       {% for item in items %}
       <td>{{ item.item_id.name }}</td>
       <td>{{ item.price }}zł</td>

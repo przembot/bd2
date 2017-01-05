@@ -18,6 +18,10 @@ def base_context():
     cats = Category.objects.all()
     return {'cats': cats}
 
+def translateStatus(ident):
+    statuses = {0: 'Złożono'}
+    return statuses[ident];
+
 def index(request):
     context = base_context()
     return render(request, 'index.html', context)
@@ -26,12 +30,16 @@ def get_orders(request):
     try:
         user = Client.objects.get(user=request.user)
         orders = Order.objects.filter(client_id=user.user_id)
-        orderDict = {}
+        orderDict = []
+        sums = 0
         for order in orders:
            orderList = Order_Item.objects.select_related().filter(order_id=order.id)
-           orderDict[order.id] = (order, orderList)
+           order.status = translateStatus(order.status)
+           orderDict.append((order, orderList))
+           for item in orderList:
+               sums += item.quantity*item.price
         context = base_context()
-        context.update({'orders': orderDict})
+        context.update({'total': sums, 'orders': orderDict})
 
         return render(request, template_name='my-orders.html',
                       context=context)
