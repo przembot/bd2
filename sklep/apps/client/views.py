@@ -25,14 +25,16 @@ def index(request):
 def get_orders(request):
     try:
         user = Client.objects.get(user=request.user)
-        orderList = Order.objects.filter(client_id=user.id)
+        orders = Order.objects.filter(client_id=user.user_id)
         orderDict = {}
-        for order in orderList:
+        for order in orders:
            orderList = Order_Item.objects.select_related().filter(order_id=order.id)
-           orderDict[order] = orderList
+           orderDict[order.id] = (order, orderList)
+        context = base_context()
+        context.update({'orders': orderDict})
 
         return render(request, template_name='my-orders.html',
-                      context={'orderDict' : orderdict})
+                      context=context)
 
     except Client.DoesNotExist:
         return render(request.path)
@@ -82,7 +84,7 @@ def db_search_items(cat_id=None, name=None):
         if name is None:
             filtered_items = items.filter(category_id=cat_id)
         else:
-            filtered_items = items.filter(category_id=cat_id, name__itcontains=name)
+            filtered_items = items.filter(category_id=cat_id, name__icontains=name)
 
     # search items by name without specifying category
     else:

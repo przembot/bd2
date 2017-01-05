@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="{% static "cart.js" %}"></script>
+    <script src="{% static "main.js" %}"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="{% static "main.css" %}">
 </head>
@@ -39,7 +41,7 @@
 
                         <!--{$ if user.is_authenticated %}-->
                         {% if True %}
-                        <li><a href="#">Moje zamówienia</a></li>
+                        <li><a href="{% url 'myorders' %}">Moje zamówienia</a></li>
                         <li><a href="#"><span class="glyphicon glyphicon-log-out"></span> Wyloguj</a></li>
 
                         {% else %}
@@ -84,7 +86,7 @@
 </div>
 
 <footer>
-    <h4 class="text-center">© 2016 Dolina miedziowa</h4>
+    <h4 class="text-center">© 2017 Dolina miedziowa</h4>
 </footer>
 
 </body>

@@ -4,6 +4,7 @@
 <hr>
 
 <div class="table">
+  <table>
     <thead class="oolor-primary">
     <tr>
         <th class="text-center">Data zamówienia</th>
@@ -18,43 +19,23 @@
     <tbody>
     <tr>
         <!--Trzeba też dorobić mapowanie statusów: {Niepłacone, Opłacone, W realizacji, Gotowe do odbioru, Odebrane, Zrealizowane, Anulowane}-->
+        <!-- TODO: zweryfikowac na przykladowych danych-->
 
-        <!--<td rowspan="$Ilość produktów na liście">2016-01-11</td>-->
-        <td rowspan="2" class="vert-align">2016-01-11</td>
-        <!--<td rowspan="$Ilość produktów na liście">Nieopłacone</td>-->
-        <td rowspan="2" class="vert-align">Nieopłacone</td>
-        <!--<td rowspan="$Ilość produktów na liście"></td>-->
-        <td rowspan="2" class="vert-align">123718236781278312.12zł</td>
-        <td>Telewizor Szajsung 40"</td>
-        <td>1999zł</td>
-        <td>2</td>
-    </tr>
+    {% for order, items in orders %}
     <tr>
-        <td>McDonald Book Geld</td>
-        <td>997zł</td>
-        <td>1</td>
+      <td rowspan="2" class="vert-align">{{ order.date }}</td>
+      <td rowspan="2" class="vert-align">{{ order.status }}</td>
+      <td rowspan="2" class="vert-align">TODO - total price</td>
+      {% for item in items %}
+      <td>{{ item.item_id.name }}</td>
+      <td>{{ item.price }}zł</td>
+      <td>{{ item.quantity }}</td>
+      </tr>
+      <tr>
+      {% endfor %}
     </tr>
-    <tr>
-        <td rowspan="3" class="vert-align">2016-01-11</td>
-        <!--<td rowspan="$Ilość produktów na liście">Nieopłacone</td>-->
-        <td rowspan="3" class="vert-align">Nieopłacone</td>
-        <!--<td rowspan="$Ilość produktów na liście"></td>-->
-        <td rowspan="3" class="vert-align">1388zł</td>
+    {% endfor %}
 
-        <td>Monitor Liyama"</td>
-        <td>800zł</td>
-        <td>1</td>
-    </tr>
-    <tr>
-        <td>Ladowarka</td>
-        <td>15zł</td>
-        <td>1</td>
-    </tr>
-    <tr>
-        <td>Telefon</td>
-        <td>500zł</td>
-        <td>2</td>
-    </tr>
     </tbody>
     </table>
 </div>

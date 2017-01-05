@@ -20,7 +20,7 @@
                         <div class="well-md">
                           <p>{{ item.price }}zł</p>
                         </div>
-                        <button type="button" class="btn btn-success btn-md"><span
+                        <button type="button" onclick="cartAdd({{item.id}},'{{item.name}}',{{item.price}})" class="btn btn-success btn-md"><span
                                 class="glyphicon glyphicon-plus"></span> Dodaj
                         </button>
                     </div>
