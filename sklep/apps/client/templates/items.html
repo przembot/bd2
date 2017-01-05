@@ -1,14 +1,21 @@
 {% extends "index.html" %}
 {% block content %}
-{% for item in items %}
-{# <h1 class="text-left">{{ item.category_id.name }}</h1> #}
+<h1 class="text-left">
+    {% if current_cat %}
+    {{ current_cat.name }}
+    {% endif %}
+</h1>
 <hr>
+
+
+{% for items_group in items %}
 <div class="container-fluid">
     <div class="row">
+        {% for item in items_group %}
         <div class="col-md-4">
             <div class="panel panel-primary">
                 <a href="{% url 'detail' item.id %}" class="details-button">
-                  <div class="panel-heading details">{{ item.name }}</div>
+                    <div class="panel-heading details">{{ item.name }}</div>
                     <div class="panel-body">
                         <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%"
                              alt="Image">
@@ -18,17 +25,18 @@
                 <div class="panel-footer">
                     <div class="row">
                         <div class="well-md">
-                          <p>{{ item.price }}zł</p>
+                            <p>{{ item.price }}zł</p>
                         </div>
-                        <button type="button" onclick="cartAdd({{item.id}},'{{item.name}}',{{item.price}})" class="btn btn-success btn-md"><span
+                        <button type="button" onclick="cartAdd({{item.id}},'{{item.name}}',{{item.price}})"
+                                class="btn btn-success btn-md"><span
                                 class="glyphicon glyphicon-plus"></span> Dodaj
                         </button>
                     </div>
                 </div>
             </div>
         </div>
+        {% endfor %}
     </div>
 </div>
-<br>
 {% endfor %}
 {% endblock %}

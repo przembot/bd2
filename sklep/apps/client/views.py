@@ -113,11 +113,21 @@ def db_search_items(cat_id=None, name=None):
 
     return filtered_items
 
-def search_items(request, cat_id=None, name=None):
+def get_category_by_id(cat_id=None):
+    try:
+        return Category.objects.get(id=cat_id)
+    except Category.DoesNotExist:
+        return None
+
+def search_items(request):
     readval = lambda x: request.GET.get(x, None)
     items = db_search_items(readval("cat_id"), readval("name"))
+    items = group_elements(items, 3)
     context = base_context()
-    context.update({'items':items})
+    current_cat = get_category_by_id(readval("cat_id"))
+    context.update({'items' : items,
+                    'current_cat' : current_cat,
+                    'items_row' : items})
     return render(request, 'items.html', context)
 
 @login_required
@@ -162,3 +172,10 @@ def make_order(request):
             return HttpResponseBadRequest()
 
     return HttpResponse()
+
+def group_elements(data, n):
+    """
+    Formats list into groups of 3 elements
+    """
+    for i in range(0, len(data), n):
+        yield data[i:i+n]

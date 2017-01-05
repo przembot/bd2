@@ -60,7 +60,7 @@ footer {
     background-color: #337ab7;
 }
 
-a .details-button {
+a.details-button {
     color: #fff;
 }
 
@@ -94,7 +94,7 @@ a .details-button {
     vertical-align: middle;
 }
 
-.oolor-primary {
+.color-primary {
     background-color: #337ab7;
     color: #fff;
 }
