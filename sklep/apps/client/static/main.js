@@ -1,17 +1,15 @@
 function getCookie(c_name)
 {
-    if (document.cookie.length > 0)
-    {
-        c_start = document.cookie.indexOf(c_name + "=");
-        if (c_start != -1)
-        {
-            c_start = c_start + c_name.length + 1;
-            c_end = document.cookie.indexOf(";", c_start);
-            if (c_end == -1) c_end = document.cookie.length;
-            return unescape(document.cookie.substring(c_start,c_end));
-        }
+  if (document.cookie.length > 0) {
+    c_start = document.cookie.indexOf(c_name + "=");
+    if (c_start != -1) {
+      c_start = c_start + c_name.length + 1;
+      c_end = document.cookie.indexOf(";", c_start);
+      if (c_end == -1) c_end = document.cookie.length;
+      return unescape(document.cookie.substring(c_start,c_end));
     }
-    return "";
+  }
+  return "";
 }
 
 $(document).ready(function() {
@@ -70,9 +68,7 @@ function sendOrder() {
     alert("Zamówienie złożone pomyślnie!");
     newCart();
     repaintCart();
-  }, function() { // failure
-    alert("Zamówienie nieudane :(");
-  });
+  }, sendOrderError);
 }
 
 // Wysyla zapytanie tworzace zamowienie
@@ -86,6 +82,13 @@ function sendOrderRequest(order, onSuccess, onError)
     , error: onError
     , type: 'POST'
     });
+}
+
+// Przetwarza sytuacje bledna wynikla w przypadku skladania zamowienia
+function sendOrderError(xhr, textstatus) {
+  if(xhr.status == 401) {
+    window.location.replace("/login");
+  }
 }
 
 
@@ -109,7 +112,3 @@ function genSumHtml(sum) {
   str += "<span class=\"glyphicon glyphicon-ok\"></span> Zatwierdź</button>";
   return str;
 }
-
-
-var orderstatuses = new Object();
-orderstatuses[0] = "Złożone";
