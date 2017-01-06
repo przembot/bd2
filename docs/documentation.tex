@@ -12,6 +12,7 @@
 \usepackage{geometry}
 \usepackage{color}
 \usepackage{makecell}
+\usepackage{float}
 
 \definecolor{codegreen}{rgb}{0,0.6,0}
 \definecolor{codegray}{rgb}{0.5,0.5,0.5}
@@ -633,7 +634,44 @@ Invoice	   &  \begin{itemize}
    \end{longtable}
    \newpage
    \subsection{Opis transakcji dla wybranego modułu}
-   \newpage
+   \begin{landscape}
+   \pagestyle{empty}
    \subsection{Projekt GUI dla wybranego modułu}
+   \begin{figure}[H]
+   \caption{Strona główna}
+   \centering
+   \includegraphics[scale=0.6]{mainpage}
+   \end{figure}
+   \newpage
+   \begin{figure}[H]
+   \caption{Widok Kategorii}
+   \centering
+   \includegraphics[scale=0.6]{categories}
+   \end{figure}
+   \newpage
+   \begin{figure}[H]
+   \caption{Rejestracja nowego klienta}
+   \centering
+   \includegraphics[scale=0.6]{register}
+   \end{figure}
+   \newpage
+   \begin{figure}[H]
+   \caption{Okno logowania}
+   \centering
+   \includegraphics[scale=0.6]{login}
+   \end{figure}
+   \newpage
+   \begin{figure}[H]
+   \caption{Zawartość koszyka}
+   \centering
+   \includegraphics[scale=0.6]{koszyk}
+   \end{figure}
+     \newpage
+   \begin{figure}[H]
+   \caption{Historia zamówień}
+   \centering
+   \includegraphics[scale=0.6]{orders}
+   \end{figure}
+   \end{landscape}
    
 \end{document}
