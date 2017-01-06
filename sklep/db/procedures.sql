@@ -127,7 +127,17 @@ $BODY$
   ROWS 1000;
 ALTER FUNCTION public.get_reviews_by_item_id(integer)
   OWNER TO postgres;
+  
+  
+-- Type: public.order_detail
 
+-- DROP TYPE public.order_detail;
+
+CREATE TYPE public.order_detail AS
+   (item_id integer,
+    quantity integer);
+ALTER TYPE public.order_detail
+  OWNER TO postgres;
   
 -- Function: public.make_order(integer, order_detail[])
 
