@@ -46,8 +46,8 @@
             <div class="review-block">
                 <div class="row">
                     <div class="col-md-3">
-                      <div class="review-block-name">{{ rev.client_id.first_name }}</div>
-                      <div class="review-block-date">{{ rev.date }}</div>
+                      <div class="review-block-name">{{ rev.client_id.user.username }}</div>
+                      <div class="review-block-date">{{ rev.date|date:"d M Y" }}</div>
                     </div>
                     <div class="col-md-9">
                         <div class="review-block-rate">
