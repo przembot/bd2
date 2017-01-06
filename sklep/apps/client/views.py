@@ -115,20 +115,12 @@ def db_search_items(cat_id=None, name=None):
 
     return filtered_items
 
-def get_category_by_id(cat_id=None):
-    try:
-        return Category.objects.get(id=cat_id)
-    except Category.DoesNotExist:
-        return None
-
 def search_items(request):
     readval = lambda x: request.GET.get(x, None)
     items = db_search_items(readval("cat_id"), readval("name"))
     items = group_elements(items, 3)
     context = base_context()
-    current_cat = get_category_by_id(readval("cat_id"))
     context.update({'items' : items,
-                    'current_cat' : current_cat,
                     'items_row' : items})
     return render(request, 'items.html', context)
 
