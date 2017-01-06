@@ -109,7 +109,7 @@ def db_search_items(cat_id=None, name=None):
 
     # search items by name without specifying category
     else:
-        filtered_items = items.filter(name__itcontains=name)
+        filtered_items = items.filter(name__icontains=name)
 
     return filtered_items
 
