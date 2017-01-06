@@ -88,6 +88,8 @@ function sendOrderRequest(order, onSuccess, onError)
 function sendOrderError(xhr, textstatus) {
   if(xhr.status == 401) {
     window.location.replace("/login");
+  } else {
+    alert("Zamówienie nieudane :(");
   }
 }
 
