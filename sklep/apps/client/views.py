@@ -44,15 +44,17 @@ def get_orders(request):
         user = Client.objects.get(user=request.user)
         orders = Order.objects.filter(client_id=user.user_id).order_by('-date')
         orderDict = []
-        sums = 0
+
         for order in orders:
+           sums = 0
            orderList = Order_Item.objects.select_related().filter(order_id=order.id)
            order.status = translateStatus(order.status)
-           orderDict.append((order, orderList))
            for item in orderList:
                sums += item.quantity*item.price
+           orderDict.append((order, sums, orderList))
+
         context = base_context()
-        context.update({'total': sums, 'orders': orderDict})
+        context.update({'orders': orderDict})
 
         return render(request, template_name='my-orders.html',
                       context=context)

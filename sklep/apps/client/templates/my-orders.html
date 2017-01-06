@@ -15,7 +15,7 @@
     </tr>
     </thead>
     <tbody>
-    {% for order, items in orders %}
+    {% for order, total, items in orders %}
     <tr>
       <td rowspan="{{ items.count }}" class="vert-align">{{ order.date }}</td>
       <td rowspan="{{ items.count }}" class="vert-align">{{ order.status }}</td>
