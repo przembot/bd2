@@ -86,8 +86,10 @@ function sendOrderRequest(order, onSuccess, onError)
 
 // Przetwarza sytuacje bledna wynikla w przypadku skladania zamowienia
 function sendOrderError(xhr, textstatus) {
-  if(xhr.status == 401) {
+  if (xhr.status == 401) {
     window.location.replace("/login");
+  } else if (xhr.status == 400) {
+    alert("Zamówienie nie może zostać zrealizowanie");
   } else {
     alert("Zamówienie nieudane :(");
   }
