@@ -166,6 +166,9 @@ BEGIN
 			_order_item.quantity, _item_price, _order_item.item_id, _order_id;
 		INSERT INTO dao_order_item(quantity, price, item_id_id, order_id_id)
 			VALUES (_order_item.quantity, _item_price, _order_item.item_id, _order_id);
+
+		UPDATE dao_item AS di SET in_stock = (di.in_stock - _order_item.quantity)
+			WHERE di.id = _order_item.item_id;
 	END LOOP;
 	
 END;
@@ -174,9 +177,7 @@ $BODY$
   COST 100;
 ALTER FUNCTION public.make_order(integer, order_detail[])
   OWNER TO postgres;
+  
 
-  
-  
 SELECT make_order(16, array[row(16,1)::order_detail, row(17, 2)::order_detail]);
-
 
