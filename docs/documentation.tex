@@ -1,26 +1,26 @@
 \documentclass[10pt,a4paper]{article}
 \usepackage[utf8]{inputenc}
-\usepackage{polski}
-\usepackage{pdflscape}
-\usepackage{graphicx}
-\usepackage{multirow}
-\usepackage{longtable}
-\usepackage{array}
-\usepackage{enumitem}
-\usepackage{listings}
-\usepackage{everypage}
-\usepackage{geometry}
-\usepackage{color}
-\usepackage{makecell}
-\usepackage{float}
+\usepackage{
+	polski,
+	pdflscape,
+	graphicx,
+	multirow,
+	longtable,
+	array,
+	enumitem,
+	listings,
+	everypage,
+	geometry,
+	color,
+	makecell,
+	float
+}
 
 \definecolor{codegreen}{rgb}{0,0.6,0}
 \definecolor{codegray}{rgb}{0.5,0.5,0.5}
 \definecolor{codepurple}{rgb}{0.58,0,0.82}
 \definecolor{backcolour}{rgb}{0.95,0.95,0.92}
 
-\renewcommand\theadfont{\bfseries}
- 
 \lstdefinestyle{mystyle}{
     backgroundcolor=\color{backcolour},   
     commentstyle=\color{codegreen},
@@ -42,12 +42,14 @@
  
 \lstset{style=mystyle}
 
-\geometry{
-top=20mm,
-bottom=30mm
+\geometry{ 
+	top=20mm,
+	bottom=30mm
 }
 
 \renewcommand\labelenumii{\arabic{enumii}.}
+
+\renewcommand\theadfont{\bfseries}
 
 \newcommand{\Lpagenumber}{\ifdim\textwidth=\linewidth\else\bgroup
   \dimendef\margin=0
@@ -61,11 +63,11 @@ bottom=30mm
 \AddEverypageHook{\Lpagenumber}%
 
 \lstset{language=SQL,
-           basicstyle=\ttfamily\scriptsize,
-           keywordstyle=\color{blue}\ttfamily,
-           stringstyle=\color{red}\ttfamily,
-           commentstyle=\color{green}\ttfamily,
-          breaklines=true
+	basicstyle=\ttfamily\scriptsize,
+    keywordstyle=\color{blue}\ttfamily,
+    stringstyle=\color{red}\ttfamily,
+    commentstyle=\color{green}\ttfamily,
+    breaklines=true
 }
 
 \author{
@@ -94,7 +96,8 @@ bottom=30mm
         \includegraphics[scale=0.4]{ER}
       \end{center}
    \end{landscape}
-          \newpage 
+    
+    \newpage 
     \subsection{Opis Encji}
      \textbf{Client} - encja reprezentująca klienta
       \begin{center}
@@ -208,7 +211,7 @@ bottom=30mm
 		  unique\_no 	 & UNIQUE INTEGER & NOT NULL 		& Numer faktury\\ \hline
 		\end{tabular}
 	  \end{center}
-  \newpage
+  	\newpage
 
     \subsection{Słownik pojęć}
         \begin{itemize}
@@ -234,6 +237,7 @@ bottom=30mm
 		  \item \textbf{Przeglądarka internetowa} – program komputerowy służący do pobierania i 
 		  	    		wyświetlania stron internetowych udostępnianych przez serwery WWW.
 		\end{itemize}
+		
 	  \newpage
 	  \subsection{Wymagania Funkcjonalne}
 	  	\flushleft
@@ -370,161 +374,182 @@ bottom=30mm
 			    										 dla konkretnego zamówienia.					& 2\\ \hline
 
 
-    \end{longtable}
-    \newpage
-    \subsection{Wymagania niefunkcjonalne:}
-      \begin{enumerate}
-	    \item Dostęp do sklepu internetowego przez 24h na dobę.
-	    \item Dostęp do sklepu internetowego za pomocą przeglądarki internetowej.
-		\item W celu złożenia zamówienia konieczna jest rejestracja oraz zalogowanie w systemie.
-		\item Każdy użytkownik ma ograniczone prawa dostępu do systemu.
-		\item Konto każdego użytkownika chronione jest nazwą użytkownika i hasłem. Hasło nie może być przechowywane w bazie 				  danych w formie jawnej. Jest zaszyfrowane funkcją skrótu.
-		\item System powinien obsługiwać około 10 000 towarów.
-		\item System powinien obsługiwać około 100 000 zarejestrowanych użytkowników.
-		\item System powinien obsługiwać około 100 jednocześnie połączonych użytkowników.
-		\item E-faktury VAT generowane przez sklep internetowy muszą spełniać wszystkie wymogi 
-			  polskiego prawa dotyczące e-faktur. 
-	   \end{enumerate}
+     \end{longtable}
+     
+     \newpage
+     \subsection{Wymagania niefunkcjonalne:}
+     \begin{enumerate}
+	   \item Dostęp do sklepu internetowego przez 24h na dobę.
+	   \item Dostęp do sklepu internetowego za pomocą przeglądarki internetowej.
+	   \item W celu złożenia zamówienia konieczna jest rejestracja oraz zalogowanie w systemie.
+	   \item Każdy użytkownik ma ograniczone prawa dostępu do systemu.
+	   \item Konto każdego użytkownika chronione jest nazwą użytkownika i hasłem. Hasło nie może być przechowywane w bazie 				     danych w formie jawnej. Jest zaszyfrowane funkcją skrótu.
+	   \item System powinien obsługiwać około 10 000 towarów.
+	   \item System powinien obsługiwać około 100 000 zarejestrowanych użytkowników.
+	   \item System powinien obsługiwać około 100 jednocześnie połączonych użytkowników.
+	   \item E-faktury VAT generowane przez sklep internetowy muszą spełniać wszystkie wymogi 
+		     polskiego prawa dotyczące e-faktur. 
+	  \end{enumerate}
+	  
 	  \begin{landscape}
 	  \pagestyle{empty}
       \subsection{Schemat logiczny}
         \includegraphics[scale=0.4]{schematlogiczny}
       \end{landscape}
+      
       \newpage
       \subsection{Skrypt DDL tworzący bazę danych}
 		\lstinputlisting{DDL_schema.sql} 
-	  \newpage
-	  \section{Projekt Aplikacji}
+		
+	\newpage
+	\section{Projekt Aplikacji}
 	  \subsection{ Hierarchia menu}
-	    \small
-	    \begin{itemize}
-          \item Strona główna - dostępna bez logowania
-          \begin{itemize}
-            \item Logowanie
-			\item Rejestracja
-			\item Kategorie
-			\begin{itemize}
- 			  \item Przeglądaj kategorie
+      \small
+	  \begin{itemize}
+        
+        \item Strona główna - dostępna bez logowania
+        \begin{itemize}
+          \item Logowanie
+		  \item Rejestracja
+		  \item Kategorie
+		  \begin{itemize}
+ 		    \item Przeglądaj kategorie
  			  \begin{itemize}
 		        \item Wyświetl towary
 		      \end{itemize}
-		      \item Towary
+		  \item Towary
+		  \begin{itemize}
+		     \item Przeglądaj towary
+		  \end{itemize}
+		  \item Wyszukiwarka
+		  \item Kontakt
+	      \end{itemize}
+        \end{itemize}
+	    
+	    \item Strona pracownika
+		\begin{itemize}
+		\item Zamówienia
+		  \begin{itemize}
+		    \item Przeglądaj
+		    \begin{itemize}
+		    \item Edytuj
+		    \end{itemize}
+		  \end{itemize}
+		\item Towary
+		\begin{itemize}
+		  \item Przeglądaj towary
+		  \begin{itemize}
+		    \item Edytuj
+			\item Usuń
+		  \end{itemize}
+		  \item Dodaj
+		\end{itemize}
+		\item Kategorie
+		\begin{itemize}
+		  \item Przeglądaj kategorie
+		  \begin{itemize}
+		    \item Wyświetl towary
+			\item Edytuj
+			\item Usuń
+		  \end{itemize}
+		  \item Dodaj
+		\end{itemize}
+		\item Wyszukiwarka
+	    \end{itemize}
+		
+		\item Strona klienta
+		\begin{itemize}
+		  \item Moje dane
+		  \begin{itemize}
+		    \item Edytuj dane
+		  \end{itemize}
+		  \item Koszyk
+		  \begin{itemize}
+		    \item Edycja koszyka
+		  \end{itemize}
+		  \item Moje zamówienia
+		  \begin{itemize}
+		    \item Zatwierdź zamówienie
+		    \item Przeglądaj zamówienia
+		    \begin{itemize}
+		      \item Szczegóły zamówienia
+		    \end{itemize}
+		  \end{itemize}		         
+		  \item Kategorie
+		  \begin{itemize}
+		    \item Przeglądaj kategorie
+		    \begin{itemize}
+		      \item Wyświetl towary
+		    \end{itemize}
+		  \end{itemize}
+		  \item Towary
+	        \begin{itemize}
+              \item Przeglądaj towary
+	          \begin{itemize}
+		        \item Dodaj do koszyka
+	          \end{itemize}
+            \end{itemize}
+          \end{itemize}
+		       
+		  \item Strona administratora
+		  \begin{itemize}
+		    \item Pracownicy
+		    \begin{itemize}
+		      \item Przeglądaj
 		      \begin{itemize}
-		        \item Przeglądaj towary
+		        \item Edytuj
+		        \item Usuń
 		      \end{itemize}
-		      \item Wyszukiwarka
-			  \item Kontakt
-		      \end{itemize}
-		      \end{itemize}
-		       \item Strona pracownika
-		       \begin{itemize}
-		       \item Zamówienia
-		       \begin{itemize}
-		         \item Przeglądaj
-		         \begin{itemize}
-		          \item Edytuj
-		         \end{itemize}
-		       \end{itemize}
-		       \item Towary
-		       \begin{itemize}
-		         \item Przeglądaj towary
-		         \begin{itemize}
-		           \item Edytuj
-				   \item Usuń
-		         \end{itemize}
-		         \item Dodaj
-		       \end{itemize}
-		       \item Kategorie
-		       \begin{itemize}
-		         \item Przeglądaj kategorie
-		         \begin{itemize}
-		         \item Wyświetl towary
-				 \item Edytuj
-				 \item Usuń
-		         \end{itemize}
-		         \item Dodaj
-		       \end{itemize}
-		       \item Wyszukiwarka
-		       \end{itemize}
-		       \item Strona klienta
-		       \begin{itemize}
-		         \item Moje dane
-		         \begin{itemize}
-		         \item Edytuj dane
-		         \end{itemize}
-		         \item Koszyk
-		         \begin{itemize}
-		         \item Edycja koszyka
-		         \end{itemize}
-		         \item Moje zamówienia
-		         \begin{itemize}
-		         \item Zatwierdź zamówienie
-		         \item Przeglądaj zamówienia
-		         \begin{itemize}
-		         \item Szczegóły zamówienia
-		         \end{itemize}
-		         \end{itemize}
-		         
-		         \item Kategorie
-		         \begin{itemize}
-		         \item Przeglądaj kategorie
-		         \begin{itemize}
-		         \item Wyświetl towary
-		         \end{itemize}
-		         \end{itemize}
-		         \item Towary
-		         \begin{itemize}
-		         \item Przeglądaj towary
-		         \begin{itemize}
-		         \item Dodaj do koszyka
-		         \end{itemize}
-		         \end{itemize}
-		       \end{itemize}
-		       \item Strona administratora
-		       \begin{itemize}
-		       \item Pracownicy
-		       \begin{itemize}
-		       \item Przeglądaj
-		       \begin{itemize}
-		         \item Edytuj
-		         \item Usuń
-		         \end{itemize}
-		         \item Dodaj
-		       \end{itemize}
-		       \end{itemize}
-		      \end{itemize}
-\subsection{Podział na moduły}
-\begin{itemize}
-\item Diagram modułów
-  \includegraphics[scale=0.7]{Modules}
- \item Aplikacja składa się z czterech modułów
- \begin{itemize}
-   \item \textbf{Accounts} : Moduł jest odpowiedzialny za zarządzanie kontami użytkowników : logowanie, rejestracja konta
- \item \textbf{Client} : Moduł umożliwia klientowi przeglądanie asortymentu oferowanego przez serwis, edycję koszyka, składanie zamówień, znajduje się tutaj również wyświetlanie strony głównej
- \item \textbf{Employee} : Moduł pozwala uprzywilejowanemu użytkownikowi wykonywać operacje typowe dla pracownika sklepu, tj. przeglądanie listy zamówień, zmiana ich statusu
- \item \textbf{Data Access Object}: Moduł trzyma w sobie wszystkie tabele poza tabelami użytkowników tzn. klientów i pracowników sklepu umożliwiając zapytania do bazy danych
- \end{itemize}
-\end{itemize}
-\subsection{Podział realizacji funkcjonalności}
-Klient - strona internetowa z przyjaznym interfejsem.
-\begin{itemize}
-\item odpowiada za prezentacje graficzną danych dla klienta oraz pracownika
-\item wyświetla towary, wyświetla szczegółowe informacje o towarze
-\item umożliwia wyszukiwanie towaru po kategorii i/lub nazwie
-\item umożliwia zalogowanie i rejestracje
-\item obsługuje koszyk klienta - umożliwia dodanie/usunięcie produktu do/z koszyka, modyfikacja ilości sztuk zamawianego towaru, umożliwia złożenie zamówienia 
-\item wyświetla wszystkie złożone przez danego klienta zamówienia wraz z informacjami o nich (tj. lista zamówionych towarów, status zamówienia)
-\end{itemize}
-Serwer
-\begin{itemize}
-\item komunikuje się z bazą danych, pośrednicząc między klientem a danymi
-na poziomie aplikacyjnym zapewnia integralność danych
-\item obsługuje uwierzytelnienie klienta oraz pracownika
-\end{itemize}
-\newpage
-\subsection{Określenie sposobu realizacji integralności danych}
-  \flushleft
-  \begin{longtable}{| p{0.5cm} | p{4cm} | p{6cm} | p{2cm} |}
+		        \item Dodaj
+		    \end{itemize}
+		  \end{itemize}
+		\end{itemize}
+		
+		\subsection{Podział na moduły}
+		\begin{itemize}
+		  \item Diagram modułów
+  		  \includegraphics[scale=0.7]{Modules}
+		  \item Aplikacja składa się z czterech modułów
+		  \begin{itemize}
+   	 	    \item \textbf{Accounts} : Moduł jest odpowiedzialny za zarządzanie kontami użytkowników 
+   	 	  	    					: logowanie, rejestracja konta
+ 		  	\item \textbf{Client}   : Moduł umożliwia klientowi przeglądanie asortymentu oferowanego
+ 		     						  przez serwis, edycję koszyka, składanie zamówień, 
+ 		     						  znajduje się tutaj również wyświetlanie strony głównej
+		  	\item \textbf{Employee} : Moduł pozwala uprzywilejowanemu użytkownikowi wykonywać operacje
+		  							  typowe dla pracownika sklepu, tj. przeglądanie listy zamówień, 
+		  							  zmiana ich statusu
+		  	\item \textbf{Data
+		  			    Access
+		  				Object     }: Moduł trzyma w sobie wszystkie tabele poza tabelami użytkowników 
+		  							  tzn. klientów i pracowników sklepu umożliwiając zapytania do bazy danych
+ 		  \end{itemize}
+		\end{itemize}
+		
+		\subsection{Podział realizacji funkcjonalności}
+		Klient - strona internetowa z przyjaznym interfejsem.
+		\begin{itemize}
+		  \item odpowiada za prezentacje graficzną danych dla klienta oraz pracownika
+		  \item wyświetla towary, wyświetla szczegółowe informacje o towarze
+		  \item umożliwia wyszukiwanie towaru po kategorii i/lub nazwie
+		  \item umożliwia zalogowanie i rejestracje
+		  \item obsługuje koszyk klienta - umożliwia dodanie/usunięcie produktu do/z koszyka, 
+		  		modyfikacja ilości sztuk zamawianego towaru, umożliwia złożenie zamówienia 	
+		  \item wyświetla wszystkie złożone przez danego klienta zamówienia wraz z informacjami o nich 
+		  		(tj. lista zamówionych towarów, status zamówienia)
+		\end{itemize}
+	
+		Serwer
+		\begin{itemize}
+		  \item komunikuje się z bazą danych, pośrednicząc między klientem a danymi
+			 	na poziomie aplikacyjnym zapewnia integralność danych
+		  \item obsługuje uwierzytelnienie klienta oraz pracownika
+		\end{itemize}
+
+		\newpage
+		\subsection{Określenie sposobu realizacji integralności danych}
+	    \flushleft
+  		\begin{longtable}{| p{0.5cm} | p{4cm} | p{6cm} | p{2cm} |}
   \hline
   Lp & Problem zapewnienia integralności &           Rozwiązanie                 & Zapewnione przez
   																	               [definicja tabel 
@@ -592,11 +617,13 @@ na poziomie aplikacyjnym zapewnia integralność danych
   	   									   z usuwanej kategorii do innej.		 & programowo \\ \hline
   \end{longtable}
   \newpage
-  \subsection{Indeksy w bazie danych}
-  Dla przyspieszenia procedury przeszukiwania rekordów bazy danych,zostaną nałożone indeksy dla następujących pól poszczególnych tabel:
-  \flushleft
-  \begin{longtable}{| m{3cm} | m{9cm} |}
-  \hline
+		\subsection{Indeksy w bazie danych}
+  		Dla przyspieszenia procedury przeszukiwania rekordów bazy danych,
+  		zostaną nałożone indeksy dla następujących pól poszczególnych tabel:
+  		
+  		\flushleft
+  		\begin{longtable}{| m{3cm} | m{9cm} |}
+	    \hline
   Employee &  \begin{itemize}
   			  \item id
 			  \item login - na potrzeby procedury logowania
@@ -614,7 +641,7 @@ na poziomie aplikacyjnym zapewnia integralność danych
     		  \item client\_id
     		  \item status - na potrzeby wyszukiwania zamówień do odbioru przez pracownika
 			  \end{itemize}\\ \hline
-Order\_Item &  \begin{itemize}
+Order\_Item&  \begin{itemize}
 	          \item id
 	          \item order\_id
 	          \item item\_id
@@ -631,47 +658,54 @@ Invoice	   &  \begin{itemize}
 		      \item order\_id
 			  \end{itemize}\\ \hline
   
-   \end{longtable}
-   \newpage
-   \subsection{Opis transakcji dla wybranego modułu}
-   \begin{landscape}
-   \pagestyle{empty}
-   \subsection{Projekt GUI dla wybranego modułu}
-   \begin{figure}[H]
-   \caption{Strona główna}
-   \centering
-   \includegraphics[scale=0.6]{mainpage}
-   \end{figure}
-   \newpage
-   \begin{figure}[H]
-   \caption{Widok Kategorii}
-   \centering
-   \includegraphics[scale=0.6]{categories}
-   \end{figure}
-   \newpage
-   \begin{figure}[H]
-   \caption{Rejestracja nowego klienta}
-   \centering
-   \includegraphics[scale=0.6]{register}
-   \end{figure}
-   \newpage
-   \begin{figure}[H]
-   \caption{Okno logowania}
-   \centering
-   \includegraphics[scale=0.6]{login}
-   \end{figure}
-   \newpage
-   \begin{figure}[H]
-   \caption{Zawartość koszyka}
-   \centering
-   \includegraphics[scale=0.6]{koszyk}
-   \end{figure}
-     \newpage
-   \begin{figure}[H]
-   \caption{Historia zamówień}
-   \centering
-   \includegraphics[scale=0.6]{orders}
-   \end{figure}
-   \end{landscape}
+   		\end{longtable}
+   		
+   		\newpage
+   		\subsection{Opis transakcji dla wybranego modułu}
+	    \begin{landscape}
+    	  \pagestyle{empty}
+    	  
+   		\subsection{Projekt GUI dla wybranego modułu}
+	    \begin{figure}[H]
+   	 	\caption{Strona główna}
+	    \centering
+   		\includegraphics[scale=0.6]{mainpage}
+   		\end{figure}
+   		
+   		\newpage
+	    \begin{figure}[H]
+   		\caption{Widok Kategorii}
+		\centering
+   		\includegraphics[scale=0.6]{categories}
+   		\end{figure}
+   		
+   		\newpage
+   		\begin{figure}[H]
+   		\caption{Rejestracja nowego klienta}
+   		\centering
+   		\includegraphics[scale=0.6]{register}
+   		\end{figure}
+   		
+   		\newpage
+   		\begin{figure}[H]
+   		\caption{Okno logowania}
+   		\centering
+   		\includegraphics[scale=0.6]{login}
+   		\end{figure}
    
+   		\newpage
+   		\begin{figure}[H]
+   		\caption{Zawartość koszyka}
+   		\centering
+   		\includegraphics[scale=0.6]{koszyk}
+   		\end{figure}
+     	
+     	\newpage
+	    \begin{figure}[H]
+   		\caption{Historia zamówień}
+   		\centering
+   		\includegraphics[scale=0.6]{orders}
+		\end{figure}
+   		
+   		\end{landscape}
 \end{document}
