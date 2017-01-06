@@ -42,7 +42,7 @@ def index(request):
 def get_orders(request):
     try:
         user = Client.objects.get(user=request.user)
-        orders = Order.objects.filter(client_id=user.user_id)
+        orders = Order.objects.filter(client_id=user.user_id).order_by('-date')
         orderDict = []
         sums = 0
         for order in orders:

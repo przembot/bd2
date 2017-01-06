@@ -29,7 +29,7 @@ function repaintCart() {
   data = listItems();
   sum = data.reduce(function(acc, a) {
     return acc + (a.price*a.amount);
-  }, 0.0);
+  }, 0.0).toFixed(2);
   data = data.map(function(item) {
     return genOneItemHtml(item.id, item.name, item.price, item.amount);
   });
