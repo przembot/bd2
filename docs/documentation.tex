@@ -662,6 +662,39 @@ Invoice	   &  \begin{itemize}
    		
    		\newpage
    		\subsection{Opis transakcji dla wybranego modułu}
+		Transakcje dla modułu składania zamówień
+
+		Przebieg składania zamówienia po stronie interfejsu:
+		\begin{itemize}
+			\item użytkownik przegląda dostępne w sklepie towary, wybierając kategorie do przeglądania
+			\item podczas przeglądania towarów, użytkownik tworzy zawartość koszyka, dodając i usuwając towary
+			\item złożenie zamówienia następuje z zatwierdzeniem koszyka
+		\end{itemize}
+		
+		Procedury po stronie bazy danych:
+		\begin{itemize}
+			\item wywoływana jest procedura get\_categories(), która zwraca zbiór dostępnych kategorii przedmiotów na 					  składzie do wyświetlenia na stronie początkowej
+			\item wybór kategorii przez użytkownika powoduje wywołanie procedury get\_items\_by\_category\_id(), która 				  zwraca zbiór przedmiotów należących do danej kategorii do wyświetlenia w interfejsie
+			\item zatwierdzenie koszyka wywołuje procedurę make\_order(), której przebieg jest następujący:
+			\begin{itemize}	
+  				\item dla każdego przedmiotu w zamówieniu sprawdzana jest ilość tego przedmiotu dostępna na składzie i 					  czy ta ilość jest wystarczająco duża, by pokryć zapotrzebowanie w zamówieniu - jeżeli nie, 								  zgłaszany jest stosowny wyjątek
+				\item tworzony jest nowy rekord w tabeli dao\_order z id klienta podanym w szczegółach zamówienia i 							  obecną datą
+				\item dla każdej pozycji zamówienia wykonywane są następujące kroki:
+				\begin{itemize}
+					\item w bazie odczytywana jest cena danego przedmiotu
+					\item tworzony jest nowy rekord w tabeli dao\_order\_item, z wartościami: 
+					\begin{itemize}
+						\item ilość przedmiotu w zamówieniu
+						\item odczytana cena
+						\item id przedmiotu
+						\item id utworzonego w poprzednim kroku rekordu zamówienia
+					\end{itemize}
+					\item aktualizowany jest odpowiadający danemu przedmiotowi rekord w bazie danych, w ten sposób, że 						  jego ilość na składzie jest pomniejszana o ilość w zamówieniu
+
+				\end{itemize}
+			\end{itemize5}
+		\end{itemize}
+		
 	    \begin{landscape}
     	  \pagestyle{empty}
     	  
